@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heatwave Intelligence System</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🌡️</span>
+            <span>Heat<span>wave</span></span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="alert.html">Alert</a>
+            <a href="about.html">About</a>
+            <a href="source.html">Sources</a>
+            <a href="navigation.html">Nevigation</a>
+            <a href="home.html">Hotspot Map</a>
+            <a href="forecast.html">Forecast</a>
+            <a href="subscribe.html">Subscribe</a>
+            <a href="saloni-media.html">Media</a>
+            
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Heatwave
+                    <span>Intelligence Portal</span>
+                </h1>
+
+                <p>
+                    Monitor regional heat conditions and identify
+                    areas experiencing elevated heatwave risk.
+                </p>
+            </div>
+        </section>
+        <br><br>
+
+        <section class="table">
+            <h2 class="table-title">
+                Top 10 Hottest Cities – May 2026 (Ranked by Absolute Peak High)
+            </h2> <br>
+
+            <div class=""></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Ave.Temp(°C)</th>
+                        <th>Max Temp(°C)</th>
+                        <th>Min Temp(°C)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Etawah</td>
+                        <td>Uttar Pradesh</td>
+                        <td>36.9°C</td>
+                        <td>48.3°C</td>
+                        <td>23.8°C</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Abohar</td>
+                        <td>Punjab</td>
+                        <td>36.8°C</td>
+                        <td>48.2°C</td>
+                        <td>24.0°C</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sambalpur</td>
+                        <td>Odisha</td>
+                        <td>34.4°C</td>
+                        <td>48.2°C</td>
+                        <td>23.3°C</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Raurkela</td>
+                        <td>Odisha</td>
+                        <td>33.0°C</td>
+                        <td>48.2°C</td>
+                        <td>21.6°C</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Ganganagar</td>
+                        <td>Rajasthan</td>
+                        <td>36.8°C</td>
+                        <td>48.2°C</td>
+                        <td>24.0°C</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Mathura</td>
+                        <td>Uttar Pradesh</td>
+                        <td>36.8°C</td>
+                        <td>48.0°C</td>
+                        <td>19.9°C</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Jaisalmer</td>
+                        <td>Rajasthan</td>
+                        <td>36.1°C</td>
+                        <td>48.0°C</td>
+                        <td>25.4°C</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Bharatpur</td>
+                        <td>Rajasthan</td>
+                        <td>37.0°C</td>
+                        <td>48.0°C</td>
+                        <td>21.6°C</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Bilaspur</td>
+                        <td>Chhattisgarh</td>
+                        <td>36.4°C</td>
+                        <td>48.0°C</td>
+                        <td>24.3°C</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Sirsa</td>
+                        <td>Haryana</td>
+                        <td>36.7°C</td>
+                        <td>47.9°C</td>
+                        <td>24.2°C</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+        <br>
+
+        <section class="map">
+            <h2 class="section-title">Live Region Hotspot Map</h2>
+
+            <div class="hotspot-map">
+                <div id="map"></div>
+            </div>
+        </section>
+        <br>
+        <section class="temperature-analysis">
+            <h2 class="analysis-title">Temperature Reading Analysis</h2>
+            <p class="analysis-subtitle">Climate Intelligence System</p>
+
+            <section class="result-card">
+                <h2>Temperature Readings</h2>
+                <p id="all-readings" class="readings"></p>
+            </section>
+
+            <section class="result-card">
+                <h2>Analysis Results</h2>
+
+                <div class="result-row">
+                    <span>Minimum Temperature</span>
+                    <strong id="minimum"></strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Maximum Temperature</span>
+                    <strong id="maximum"></strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Average Temperature</span>
+                    <strong id="average"></strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Readings above 40°C</span>
+                    <strong id="above-threshold"></strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Readings ≥ 40°C</span>
+                    <strong id="at-or-above"></strong>
+                </div>
+            </section>
+
+            <section class="result-card heatwave-card">
+                <h2>Heatwave Condition Readings</h2>
+                <p id="high-readings" class="readings"></p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Heatwave Intelligence System | Stay Safe. Stay Informed</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+
+    <script>
+        const map = L.map("map").setView([20, 0], 2);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+
+        L.heatLayer(
+            [
+                [28.61, 77.21, 0.9],
+                [33.45, -112.07, 0.7]
+            ],
+            {
+                radius: 25,
+                blur: 15
+            }
+        ).addTo(map);
+    </script>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>

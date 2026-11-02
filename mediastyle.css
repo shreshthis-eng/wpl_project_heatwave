@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: aliceblue;
+    color: #173b3f;
+}
+
+header {
+    background: #FFFFFF;
+    border-bottom: 3px solid aliceblue;
+    padding: 24px 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(205, 180, 219, 0.15);
+}
+
+header h1 {
+    font-size: 2.1rem;
+    color: #4A3E56;
+    margin-bottom: 12px;
+}
+
+.site-nav {
+    margin: 16px 0;
+    text-align: center;
+}
+
+.site-nav a {
+    display: inline-block;
+    /* Display horizontally */
+    text-decoration: none;
+    /* Remove underline */
+    color: #4A5568;
+    /* Base link color */
+    background-color: #FFFFFF;
+    /* Base background */
+    padding: 8px 16px;
+    margin: 4px 3px;
+    border-radius: 20px;
+    /* Rounded pill shape */
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1.5px solid rgb(210, 225, 237);
+    transition: all 0.25s ease-in-out;
+}
+
+.site-nav a.current {
+    background-color: #A2D2FF;
+    color: #0F2D59;
+    border-color: #A2D2FF;
+    box-shadow: 0 3px 10px rgba(162, 210, 255, 0.45);
+}
+
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.media-card {
+    background: #FFFFFF;
+    padding: 26px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    border: 1px solid aliceblue;
+}
+
+.second media-card {
+    border-left: 6px solid aliceblue;
+    background-color: #FAF5FD;
+}
+
+
+video,
+img {
+
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 14px auto;
+    border-radius: 12px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #CDB4DB, transparent);
+    margin: 28px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: skyblue;
+    color: #2D1A3B;
+    font-weight: 600;
+    margin-top: 40px;
+    border-top: 3px solid darkblue;
+}
+.tip-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: #0F2D59;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 13px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tip-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.tip-popup.show {
+  display: flex;
+}
+
+.tip-popup-box {
+  position: relative;
+  width: 90%;
+  max-width: 430px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  color: #173b3f;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close-tip {
+  background: #A2D2FF;
+  color: #0F2D59;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
