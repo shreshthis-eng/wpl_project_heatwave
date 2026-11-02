@@ -1,73 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safety measures</title>
-
+<title>Safety Measures | Heatwave Intelligence System</title>
 <style>
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    nav ul li {
-        display: inline-block;
-    }
-
-    nav ul li a {
-        display: inline-block;
-        color: #023e8a;
-        text-decoration: none;
-        padding: 10px 15px;
-    }
-
-    nav ul li a:hover {
-        color: white;
-        background-color: #0077b6;
-        text-decoration: underline;
-    }
 .safety-measures {
     border: 2px solid black;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px gray;
 }
-
 .safety-measures li {
     margin: 8px;
 }
-
 .safety-measures li:hover {
     color: blue;
 }
 </style>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="nav.css">
 <link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ===== SHARED SITE NAVIGATION ===== -->
+  <nav class="site-navbar" aria-label="Site Navigation">
+    <a href="index.html" class="nav-brand">&#127777;&#65039; Heat<span>wave</span> Portal</a>
+    <ul class="nav-list">
+      <li><a href="index.html"                     >Home</a></li>
+      <li><a href="alert-details.html"             >Alert Bulletin</a></li>
+      <li><a href="forecast.html"                  >Forecast</a></li>
+      <li><a href="navigation.html" class="active" >Safety</a></li>
+      <li><a href="subscribe.html"                 >Subscribe</a></li>
+      <li><a href="task8.html"                     >Register</a></li>
+    </ul>
+  </nav>
+  <!-- ===== END SHARED NAVIGATION ===== -->
 <header>
-<h1 style="text-align: center; background-color: #B2E741;">
-    <font name="Arial"></font>
+<h1 style="text-align: center; background-color: #add8e6; padding: 14px 0;">
     <b>Safety Measures to follow during Heatwave</b>
 </h1>
 
-<nav class="sidebar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="alert-details.html">Alert Bulletin</a></li>
-        <li><a href="about-system.html">About</a></li>
-        <li><a href="source.html">Sources</a></li>
-        <li><a href="navigation.html">Navigation</a></li>
-        <li><a href="hotspot-map.html">Hotspot Map</a></li>
-        <li><a href="forecast.html">Forecast</a></li>
-        <li><a href="subscribe.html">Subscribe</a></li>
-        <li><a href="media.html">Media</a></li>
-    </ul>
-</nav>
+<div class="sidebar">
+  <nav class="site-nav" aria-label="Page sections">
+    <a href="index.html">Home</a>
+    <a href="alert-details.html">Alert Bulletin</a>
+    <a href="forecast.html">Forecast</a>
+    <a href="navigation.html" class="current">Safety</a>
+    <a href="subscribe.html">Subscribe</a>
+    <a href="media.html">Media</a>
+  </nav>
+</div>
 
 </header>
 <main class="content">

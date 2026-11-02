@@ -3,93 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heatwave Advisory Subscription Form</title>
+<title>Subscribe to Heatwave Alerts | Heatwave Intelligence System</title>
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="layout.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="form.css">
+<style>
+  /* ── Subscribe page form layout ── */
+  .subscribe-wrap {
+    max-width: 560px;
+    margin: 36px auto;
+    padding: 0 16px;
+  }
+
+  .subscribe-wrap fieldset {
+    border: 2px solid #b0c4de;
+    border-radius: 10px;
+    padding: 28px 32px;
+    background: #f7fbff;
+  }
+
+  .subscribe-wrap legend {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f2d59;
+    padding: 0 10px;
+  }
+
+  /* Block container that gives every field a clean row */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a3a5c;
+    margin-bottom: 6px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #858282;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #e7780f;
+    box-shadow: 0 0 5px rgba(231, 120, 15, 0.35);
+  }
+
+  .form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+
+  /* Radio / checkbox groups */
+  .radio-group,
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .radio-group p,
+  .checkbox-group p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a3a5c;
+    margin: 0 0 6px;
+  }
+
+  .radio-group label,
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+  }
+
+  /* Buttons */
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .btn-primary {
+    padding: 10px 24px;
+    background-color: #e7780f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: #c9620a;
+  }
+
+  .btn-secondary {
+    padding: 10px 24px;
+    background-color: #fff;
+    color: #e7780f;
+    border: 2px solid #e7780f;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e7780f;
+    color: #fff;
+  }
+</style>
 </head>
 <body>
-<header>
-<h1 style="text-align: center; background-color: #e7780f;"><font
-name="Arial"></font><b>Heatwave Advisory Subscription Form</b></font></h1>
-</header>
-<form action="/submit.php" method="POST">
-<fieldset>
-<legend>Heatwave Advisory Details</legend>
+  <!-- ===== SHARED SITE NAVIGATION ===== -->
+  <nav class="site-navbar" aria-label="Site Navigation">
+    <a href="index.html" class="nav-brand">&#127777;&#65039; Heat<span>wave</span> Portal</a>
+    <ul class="nav-list">
+      <li><a href="index.html"                     >Home</a></li>
+      <li><a href="alert-details.html"             >Alert Bulletin</a></li>
+      <li><a href="forecast.html"                  >Forecast</a></li>
+      <li><a href="navigation.html"                >Safety</a></li>
+      <li><a href="subscribe.html" class="active"  >Subscribe</a></li>
+      <li><a href="task8.html"                     >Register</a></li>
+    </ul>
+  </nav>
+  <!-- ===== END SHARED NAVIGATION ===== -->
 
-<section>
+  <div class="subscribe-wrap">
+    <form id="subscribe-form" action="/submit.php" method="POST">
+      <fieldset>
+        <legend>Heatwave Advisory — Subscribe</legend>
 
-<label for="citizen-name" style="padding: 10px; text-align: center; border-
-radius: 1px solid #858282; margin-bottom: 16px;" ><font size="5">Citizen
+        <!-- Citizen Name -->
+        <div class="form-group">
+          <label for="citizen-name">Citizen Name</label>
+          <input type="text" id="citizen-name" name="citizen-name"
+                 placeholder="Enter your full name" required>
+        </div>
 
-Name:</font></label>
-<br>
-<input type="text" id="citizen-name" name="Citizen name" placeholder="Enter
-citizen name" required style="width: auto; padding: 5px; border: 2px solid
-#858282;">
-</section>
-<section>
-<label for="user-email" style="padding: 10px; text-align: center; border-radius:
-1px solid #858282; margin-bottom: 16px;" ><font size="5">Email
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="user-email">Email Address</label>
+          <input type="email" id="user-email" name="user-email"
+                 placeholder="Enter your email address" required>
+        </div>
 
-K. J. Somaiya School of Engineering, Mumbai-77
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="mobile-no">Mobile Number</label>
+          <input type="tel" id="mobile-no" name="mobile-no"
+                 placeholder="Enter your mobile number" required>
+        </div>
 
-(Somaiya Vidyavihar University)
-Department of Computer Engineering
+        <!-- Region -->
+        <div class="form-group">
+          <label for="region">Choose a Region</label>
+          <select id="region" name="region">
+            <option value="north">North</option>
+            <option value="south">South</option>
+            <option value="east">East</option>
+            <option value="west">West</option>
+          </select>
+        </div>
 
-Address:</font></label>
-<br>
-<input type="email" id="user-email" name="user-email" required
-placeholder="Enter your email address" style="width: auto; padding: 5px; border: 2px
-solid #858282;">
-</section>
-<section>
-<label for="mobile-no" style="padding: 10px; text-align: center; border-radius:
-1px solid #858282; margin-bottom: 16px;" ><font size="5">Mobile
-Number:</font></label>
-<br>
-<input type="tel" id="mobile-no" name="mobile-no" required placeholder="Enter
-your mobile number" style="width: auto; padding: 5px; border: 2px solid #858282;">
-</section>
-<label for="region"><font size="5">Choose a region:</font></label>
-<select id="region" name="region" style="width: auto; padding: 5px; border: 2px
-solid #858282;">
-<option value="north">North</option>
-<option value="south">South</option>
-<option value="east">East</option>
-<option value="west">West</option>
-</select>
-<br>
-<font size="5">Preferred Language:</font>
-<br>
-<label>
-<input type="radio" name="language" value="english" style="margin-right:
-10px;"><font size="4"> English</font>
-</label>
-<br>
-<label>
-<input type="radio" name="language" value="spanish" style="margin-right:
-10px;"><font size="4"> Spanish</font>
-</label>
-<br>
-<label>
-<input type="checkbox" name="terms" required style="margin-right: 10px;"><font
-size="4"> Receive updates and alerts</font>
-</label>
-<br>
-<font size="5" name="Veranda"></font><textarea>Drop your enquiry
-here</textarea></font>
-<br>
-<button type="submit" style="padding: 10px; text-align: center; border: 1px solid
-#e7780f; background-color: #e7780f; color: white;">Submit Form</button>
-<hr>
-<button type="reset" style="padding: 10px; text-align: center; border: 1px solid
+        <!-- Preferred Language (radio) -->
+        <div class="radio-group">
+          <p>Preferred Language</p>
+          <label>
+            <input type="radio" name="language" value="english"> English
+          </label>
+          <label>
+            <input type="radio" name="language" value="hindi"> Hindi
+          </label>
+          <label>
+            <input type="radio" name="language" value="spanish"> Spanish
+          </label>
+        </div>
 
-K. J. Somaiya School of Engineering, Mumbai-77
+        <!-- Alerts opt-in (checkbox) -->
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="terms" required>
+            Receive heatwave updates and alerts
+          </label>
+        </div>
 
-(Somaiya Vidyavihar University)
-Department of Computer Engineering
-#e7780f; background-color: #e7780f; color: white;">Reset Form</button>
-</fieldset>
-</form>
+        <!-- Enquiry textarea -->
+        <div class="form-group">
+          <label for="enquiry">Drop your enquiry (optional)</label>
+          <textarea id="enquiry" name="enquiry"
+                    placeholder="Type your message here…"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Submit Form</button>
+          <button type="reset"  class="btn-secondary">Reset Form</button>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
 </body>
 </html>

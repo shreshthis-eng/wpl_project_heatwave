@@ -1,3 +1,78 @@
+/* ============================================
+   SHARED SITE NAVIGATION  (nav.css)
+   Used by: index.html, alert-details.html,
+            forecast.html, navigation.html,
+            subscribe.html, task8.html
+   ============================================ */
+
+/* --- Reset bits needed everywhere --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* --- Top navbar bar --- */
+.site-navbar {
+    width: 100%;
+    background: #0f2d59;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: 60px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/* Brand / logo */
+.site-navbar .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+}
+
+.site-navbar .nav-brand span { color: #ff9633; }
+
+/* Link list */
+.site-navbar .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.site-navbar .nav-list li a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(255,255,255,0.78);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 7px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.site-navbar .nav-list li a:hover {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+}
+
+/* Active page highlight */
+.site-navbar .nav-list li a.active {
+    background: #e76f00;
+    color: #fff;
+}
+
+/* --- Legacy .gallery styles (index/home page) --- */
 .gallery {
     width: 300px;
     height: 200px;
@@ -9,3 +84,30 @@
 .gallery:hover {
     transform: scale(1.1);
 }
+
+/* --- Legacy .site-nav pill style (saloni-media / alert pages) --- */
+.site-nav {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.site-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #4A5568;
+    background-color: #fff;
+    padding: 7px 14px;
+    margin: 3px 2px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1.5px solid #d2e1ed;
+    transition: all 0.2s ease-in-out;
+}
+
+.site-nav a:hover,
+.site-nav a.current {
+    background-color: #a2d2ff;
+    color: #0f2d59;
+    border-color: #a2d2ff;
+}

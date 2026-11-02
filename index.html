@@ -1,149 +1,582 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heatwave Intelligence System - Home </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="nav.css">
-    <style>
-
-        header {
-            background: #0077b6;
-            color: white;
-            text-align: center;
-            padding: 20px;
-
-            top: 0;
-        }
-
-        main {
-            width: 90%;
-            max-width: 1100px;
-            margin: 25px auto;
-        }
-
-        article {
-            border: 1.5px solid black;
-            border-radius: 5px;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Heatwave Intelligence System - Monitor regional heat conditions, get early warning alerts, forecasts, safety tips for India.">
+  <title>Heatwave Intelligence System | Home</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+  <link rel="stylesheet" href="site.css">
 </head>
-
 <body>
-    <header style="background-color: #0077b6; color: white; text-align: center; padding: 20px; border: 2px solid #023e8a;">
-        <h2 style="color: #ffffff;">Heatwave Portal</h2>
-        <p style="text-align: center;">Monitoring &amp; Early Warning</p>
-        <hr>
-    
-        <nav class="site-nav" aria-label="Primary">
-            <a href="index.html" class="current">Home</a>
-            <a href="alert-details.html">Alert Bulletin</a>
-            <a href="about-system.html">About</a>
-            <a href="source.html">Sources</a>
-            <a href="navigation.html">Navigation</a>
-            <a href="hotspot-map.html">Hotspot Map</a>
-            <a href="forecast.html">Forecast</a>
-            <a href="subscribe.html">Subscribe</a>
-            <a href="media.html">Media</a>
-        </nav>
-        
-    </header>
-    <hr>
-    <main>
-        <img class="gallery" src="PHOTO-iStock_000031433304_Double-heatwave-121815-2000x1333.jpg"
-    alt="Person suffering from heat wave">
-       <h1 style="text-align: center; margin-bottom: 20px;">
-    Heatwave Intelligence System
-</h1>
-        <p style="padding: 10px; border: 1px solid #0077b6;">A Heat Wave is a period of abnormally high temperatures, more than the normal maximum temperature that occurs
-            during the summer season in the North-Western parts of India. Heat Waves typically occur between March and
-            June, and in some rare cases even extend till July. The extreme temperatures and resultant atmospheric
-            conditions adversely affect people living in these regions as they cause physiological stress, sometimes
-            resulting in death.
-</p>
-        <article>
-            <h4>The <a href="https://mausam.imd.gov.in/">Indian Meteorological Department (IMD)</a> has given the
-                following
-                criteria for Heat Waves :</h4>
 
-            <ul>
-                <li>Heat Wave need not be considered till maximum temperature of a station reaches atleast 40°C for
-                    Plains
-                    and atleast 30°C for Hilly regions</li>
-                <li>When normal maximum temperature of a station is less than or equal to 40°C Heat Wave Departure from
-                    normal is 5°C to 6°C Severe Heat Wave Departure from normal is 7°C or more</li>
-                <li>When normal maximum temperature of a station is more than 40°C Heat Wave Departure from normal is
-                    4°C to
-                    5°C Severe Heat Wave Departure from normal is 6°C or more</li>
-                <li>When actual maximum temperature remains 45°C or more irrespective of normal maximum temperature,
-                    heat
-                    waves should be declared. Higher daily peak temperatures and longer, more intense heat waves are
-                    becomingly increasingly frequent globally due to climate change. India too is feeling the impact of
-                    climate change in terms of increased instances of heat waves which are more intense in nature with
-                    each
-                    passing year, and have a devastating impact on human health thereby increasing the number of heat
-                    wave
-                    casualties.</li>
-            </ul>
-        </article>
-        <section>
-            </p>
-            <p>
-            <h4>Health Impacts of Heat Waves</h4>
+  <!-- ===== SHARED SITE NAVIGATION ===== -->
+  <nav class="site-navbar" aria-label="Site Navigation">
+    <a href="index.html" class="nav-brand">&#127777;&#65039; Heat<span>wave</span> Portal</a>
+    <ul class="nav-list">
+      <li><a href="index.html"          class="active">Home</a></li>
+      <li><a href="alert-details.html"             >Alert Bulletin</a></li>
+      <li><a href="forecast.html"                  >Forecast</a></li>
+      <li><a href="navigation.html"                >Safety</a></li>
+      <li><a href="subscribe.html"                 >Subscribe</a></li>
+      <li><a href="task8.html"                     >Register</a></li>
+    </ul>
+  </nav>
+  <!-- ===== END SHARED NAVIGATION ===== -->
 
-            The health impacts of Heat Waves typically involve dehydration, heat cramps, heat exhaustion and/or heat
-            stroke. The signs and symptoms are as follows:
+  <!-- PAGE: HOME -->
+  <main id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-badge">🔥 Live Heatwave Monitoring System</div>
+      <h1>Heatwave<br><span>Intelligence Portal</span></h1>
+      <p>Monitor regional heat conditions, access early warning alerts, and stay safe during India's extreme summer heat events.</p>
+      <div class="hero-stats">
+        <div class="stat-card"><span class="stat-value">48.3°C</span><span class="stat-label">Peak Recorded</span></div>
+        <div class="stat-card"><span class="stat-value">10+</span><span class="stat-label">Cities Monitored</span></div>
+        <div class="stat-card"><span class="stat-value">5</span><span class="stat-label">States on Alert</span></div>
+        <div class="stat-card"><span class="stat-value">IMD</span><span class="stat-label">Data Source</span></div>
+      </div>
+    </section>
 
-            <ul>
-                <li>Heat Cramps: Ederna (swelling) and Syncope (Fainting) generally accompanied by fever below 39°C
-                    i.e.102°F.</li>
-                <li>Heat Exhaustion: Fatigue, weakness, dizziness, headache, nausea, vomiting, muscle cramps and
-                    sweating.</li>
-                <li>Heat Stoke: Body temperatures of 40°C i.e. 104°F or more along with delirium, seizures or coma. This
-                    is a potential fatal condition</li>
-            </ul>
+    <div class="section-wrap">
+      <div class="section-header">
+        <div class="pill-tag">Overview</div>
+        <h2>What is a Heatwave?</h2>
+        <p>Understanding extreme heat events and their impact on India</p>
+      </div>
+      <div class="card"><div class="card-body">
+        <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.8;margin-bottom:20px;">A Heat Wave is a period of abnormally high temperatures, more than the normal maximum temperature that occurs during the summer season in the North-Western parts of India. Heat Waves typically occur between <strong>March and June</strong>, and in some rare cases extend till July.</p>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1rem;color:var(--brand);margin-bottom:12px;">IMD Criteria for Heatwaves</h3>
+        <ul style="padding-left:20px;font-size:0.9rem;color:var(--text-muted);line-height:1.9;">
+          <li>Heat Wave not considered till max temp reaches at least <strong>40&deg;C</strong> for Plains, <strong>30&deg;C</strong> for Hills.</li>
+          <li>Normal max temp &le;40&deg;C: Departure 5-6&deg;C = Heat Wave; 7&deg;C+ = Severe Heat Wave.</li>
+          <li>Normal max temp &gt;40&deg;C: Departure 4-5&deg;C = Heat Wave; 6&deg;C+ = Severe Heat Wave.</li>
+          <li>When actual max temp is <strong>45&deg;C or more</strong>, heat wave should be declared.</li>
+        </ul>
+      </div></div>
 
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-card-icon">🏥</span><h3>Health Impacts</h3>
+          <ul>
+            <li><strong>Heat Cramps:</strong> Edema and Syncope with fever below 39&deg;C.</li>
+            <li><strong>Heat Exhaustion:</strong> Fatigue, dizziness, nausea, muscle cramps, sweating.</li>
+            <li><strong>Heat Stroke:</strong> Body temp &ge;40&deg;C with delirium or coma — potentially fatal.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🌍</span><h3>Causes of Increasing Heatwaves</h3>
+          <ul>
+            <li><strong>Climate Change:</strong> Rising global temperatures lead to more intense heat events.</li>
+            <li><strong>Early Summer Onset:</strong> Higher temperatures arriving earlier in the year.</li>
+            <li><strong>Weak Pre-Monsoon:</strong> Reduced rainfall limits natural cooling.</li>
+            <li><strong>Urban Heat Island:</strong> Cities trap heat due to concrete infrastructure.</li>
+          </ul>
+        </div>
+      </div>
 
-            </p>
-           <img class="gallery" src="360_F_369465299_mlh45khJQhK1ibX9EgUEuoA53zS0ASPn.jpg" alt="">
+      <div class="section-header" style="margin-top:50px;">
+        <div class="pill-tag">Data</div><h2>Top 10 Hottest Cities – May 2026</h2>
+        <p>Ranked by Absolute Peak Temperature</p>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Rank</th><th>City</th><th>State</th><th>Avg Temp</th><th>Max Temp</th><th>Min Temp</th></tr></thead>
+        <tbody>
+          <tr><td><span class="rank-badge gold">1</span></td><td><strong>Etawah</strong></td><td>Uttar Pradesh</td><td>36.9&deg;C</td><td><strong>48.3&deg;C</strong></td><td>23.8&deg;C</td></tr>
+          <tr><td><span class="rank-badge silver">2</span></td><td><strong>Abohar</strong></td><td>Punjab</td><td>36.8&deg;C</td><td><strong>48.2&deg;C</strong></td><td>24.0&deg;C</td></tr>
+          <tr><td><span class="rank-badge bronze">3</span></td><td><strong>Sambalpur</strong></td><td>Odisha</td><td>34.4&deg;C</td><td><strong>48.2&deg;C</strong></td><td>23.3&deg;C</td></tr>
+          <tr><td><span class="rank-badge">4</span></td><td>Raurkela</td><td>Odisha</td><td>33.0&deg;C</td><td>48.2&deg;C</td><td>21.6&deg;C</td></tr>
+          <tr><td><span class="rank-badge">5</span></td><td>Ganganagar</td><td>Rajasthan</td><td>36.8&deg;C</td><td>48.2&deg;C</td><td>24.0&deg;C</td></tr>
+          <tr><td><span class="rank-badge">6</span></td><td>Mathura</td><td>Uttar Pradesh</td><td>36.8&deg;C</td><td>48.0&deg;C</td><td>19.9&deg;C</td></tr>
+          <tr><td><span class="rank-badge">7</span></td><td>Jaisalmer</td><td>Rajasthan</td><td>36.1&deg;C</td><td>48.0&deg;C</td><td>25.4&deg;C</td></tr>
+          <tr><td><span class="rank-badge">8</span></td><td>Bharatpur</td><td>Rajasthan</td><td>37.0&deg;C</td><td>48.0&deg;C</td><td>21.6&deg;C</td></tr>
+          <tr><td><span class="rank-badge">9</span></td><td>Bilaspur</td><td>Chhattisgarh</td><td>36.4&deg;C</td><td>48.0&deg;C</td><td>24.3&deg;C</td></tr>
+          <tr><td><span class="rank-badge">10</span></td><td>Sirsa</td><td>Haryana</td><td>36.7&deg;C</td><td>47.9&deg;C</td><td>24.2&deg;C</td></tr>
+        </tbody>
+      </table></div>
 
-        </section>
+      <div class="section-header" style="margin-top:50px;">
+        <div class="pill-tag">Analysis</div><h2>Temperature Reading Analysis</h2>
+        <p>Climate Intelligence System — computed from sensor readings</p>
+      </div>
+      <div class="analysis-grid">
+        <div class="analysis-card"><h3>&#128202; All Temperature Readings</h3><div class="reading-display" id="all-readings"></div></div>
+        <div class="analysis-card"><h3>&#128200; Statistical Summary</h3>
+          <div class="result-row"><span>Minimum Temperature</span><strong id="minimum"></strong></div>
+          <div class="result-row"><span>Maximum Temperature</span><strong id="maximum"></strong></div>
+          <div class="result-row"><span>Average Temperature</span><strong id="average"></strong></div>
+          <div class="result-row"><span>Readings above 40&deg;C</span><strong id="above-threshold"></strong></div>
+          <div class="result-row"><span>Readings &ge; 40&deg;C</span><strong id="at-or-above"></strong></div>
+        </div>
+        <div class="analysis-card heatwave-readings"><h3>&#128293; Heatwave Condition Readings (&ge; 40&deg;C)</h3><div class="reading-display" id="high-readings"></div></div>
+      </div>
 
-        <section>
-            <h2>Extreme heatwave in India</h2>
-           <img class="gallery" src="the-indian-heat-wave-of-2026-v0-xu3csz8ratxd1.webp"
-    alt="Heatwave in India">
-            <p>
-            <h3>Reasons Behind Increasing Heat Waves</h3>
-            The increasing intensity of heatwaves in recent years can be attributed to several factors:
+      <div class="section-header" style="margin-top:50px;">
+        <div class="pill-tag">Geography</div><h2>India Overview Map</h2>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15281600.757461092!2d72.09604504049474!3d20.756485603994015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1785236170675!5m2!1sen!2sin"
+          width="100%" height="450" style="border:0;display:block;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="India Map"></iframe>
+      </div>
+    </div>
+  </main>
 
-            <ul>
-                <li>Climate Change: Rising global temperatures are leading to more frequent and intense heatwaves.</li>
-                <li>Early Summer Onset: Higher temperatures are arriving earlier in the year, prolonging heat exposure.
-                </li>
-                <li>Weak Pre-Monsoon Activity: Reduced rainfall and thunderstorms limit natural cooling.
-                    Urban Heat Island Effect: Cities trap heat due to concrete infrastructure and reduced greenery.</li>
-                <li>Global Weather Patterns: Conditions similar to El Niño can suppress rainfall and increase
-                    temperatures.</li>
-            </ul>
+  <!-- PAGE: ALERT BULLETIN -->
+  <main id="page-alert" class="page">
+    <div class="section-wrap">
+      <div class="alert-banner" role="alert">
+        <div class="alert-banner-icon">&#128680;</div>
+        <div><h2>Severe Heatwave Alert Bulletin for India</h2>
+          <p>The India Meteorological Department (IMD) has issued a <strong>Severe Heatwave Alert</strong> for several parts of India. Extremely high temperatures expected across northern, central, and western regions.</p>
+        </div>
+      </div>
+      <div class="highlights-box">
+        <h3>&#127777;&#65039; National Weather Highlights</h3>
+        <ul>
+          <li>Maximum temperatures may range from <strong>42&deg;C to 47&deg;C</strong> in affected areas.</li>
+          <li>Hot and dry winds (loo) are expected during afternoon hours.</li>
+          <li>Heatwave conditions likely to persist for the next <strong>3-5 days</strong>.</li>
+        </ul>
+      </div>
+      <div class="section-header"><div class="pill-tag">Regional Alerts</div><h2>State-Wise Alert Status</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>State</th><th>Alert Level</th><th>Temperature Range</th><th>High Alert Regions</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rajasthan</strong></td><td><span class="badge badge-red">&#128308; Red Alert</span></td><td>46&deg;C - 47&deg;C</td><td>Jaisalmer, Bikaner, Jodhpur</td></tr>
+          <tr><td><strong>Maharashtra</strong></td><td><span class="badge badge-orange">&#128992; Orange Alert</span></td><td>43&deg;C - 46&deg;C</td><td>Nagpur, Amravati, Wardha</td></tr>
+          <tr><td><strong>Delhi</strong></td><td><span class="badge badge-red">&#128308; Red Alert</span></td><td>45&deg;C - 46&deg;C</td><td>Hot and dry winds throughout Delhi</td></tr>
+          <tr><td><strong>Uttar Pradesh</strong></td><td><span class="badge badge-yellow">&#128993; Yellow Alert</span></td><td>42&deg;C - 44&deg;C</td><td>Western and central districts</td></tr>
+          <tr><td><strong>Madhya Pradesh</strong></td><td><span class="badge badge-orange">&#128992; Orange Alert</span></td><td>44&deg;C - 46&deg;C</td><td>Gwalior, Shivpuri, Bhind</td></tr>
+        </tbody>
+      </table></div>
+      <div class="advisory-grid" style="margin-top:30px;">
+        <div class="advisory-card"><h3>&#128737;&#65039; General Safety Advisory</h3>
+          <ol><li>Stay hydrated by drinking plenty of water.</li><li>Avoid direct sunlight between <strong>12 PM and 4 PM</strong>.</li><li>Wear lightweight, loose-fitting cotton clothing.</li><li>Use hats, umbrellas, and sunscreen while outdoors.</li></ol>
+        </div>
+        <div class="advisory-card"><h3>&#128203; Bulletin Information</h3>
+          <ul><li>Bulletin Version: <strong>2.1</strong></li><li>Issue Date: <strong>26th July 2026</strong></li><li>Issued By: <strong>IMD</strong></li><li>Coverage: All India Heatwave Monitoring Bulletin</li></ul>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:14px;font-style:italic;"><strong>Disclaimer:</strong> Forecast subject to revision based on updated meteorological observations and satellite imagery.</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-            </p>
-        </section>
+  <!-- PAGE: FORECAST -->
+  <main id="page-forecast" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Forecast</div><h2>Forecast Summary</h2><p>Region-Wise Temperature &amp; Forecast Results - Source: IMD</p></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Region</th><th>State / Station</th><th>Max. Temperature</th><th>Severity Level</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="5" style="font-weight:700;vertical-align:middle;background:rgba(15,45,89,0.04);">North</td><td>Delhi</td><td>42&deg;C</td><td><span class="badge badge-extreme">Extreme</span></td></tr>
+          <tr><td>Punjab</td><td>38&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+          <tr><td>Himachal Pradesh</td><td>27&deg;C</td><td><span class="badge badge-low">Low</span></td></tr>
+          <tr><td>Haryana</td><td>41&deg;C</td><td><span class="badge badge-extreme">Extreme</span></td></tr>
+          <tr><td>Uttarakhand</td><td>29&deg;C</td><td><span class="badge badge-low">Low</span></td></tr>
+          <tr><td rowspan="5" style="font-weight:700;vertical-align:middle;background:rgba(15,45,89,0.04);">South</td><td>Tamil Nadu</td><td>38&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+          <tr><td>Karnataka</td><td>33&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td>Kerala</td><td>30&deg;C</td><td><span class="badge badge-low">Low</span></td></tr>
+          <tr><td>Andhra Pradesh</td><td>39&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+          <tr><td>Telangana</td><td>34&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td rowspan="5" style="font-weight:700;vertical-align:middle;background:rgba(15,45,89,0.04);">East</td><td>West Bengal</td><td>35&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td>Odisha</td><td>37&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+          <tr><td>Bihar</td><td>36&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+          <tr><td>Jharkhand</td><td>35&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td>Assam</td><td>32&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td rowspan="5" style="font-weight:700;vertical-align:middle;background:rgba(15,45,89,0.04);">West</td><td>Maharashtra</td><td>33&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td>Gujarat</td><td>41&deg;C</td><td><span class="badge badge-extreme">Extreme</span></td></tr>
+          <tr><td>Goa</td><td>32&deg;C</td><td><span class="badge badge-moderate">Moderate</span></td></tr>
+          <tr><td>Rajasthan</td><td>44&deg;C</td><td><span class="badge badge-extreme" style="background:#fdecea;color:#b71c1c;">&#9888; Extreme</span></td></tr>
+          <tr><td>Daman &amp; Diu</td><td>36&deg;C</td><td><span class="badge badge-high">High</span></td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="4">Last updated: 28th July, 18:00 | Source: India Meteorological Department (IMD)</td></tr></tfoot>
+      </table></div>
+      <div style="background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;border-radius:var(--radius);padding:20px 24px;margin-top:24px;font-weight:600;font-size:0.92rem;">
+        &#9888; Heatwave Alert: Rajasthan expected to experience extreme temperatures up to 44&deg;C. Residents advised to stay hydrated, avoid direct sunlight between 12 PM and 4 PM.
+      </div>
+      <div class="severity-guide">
+        <h3>Severity Level Guide</h3>
+        <div class="severity-pills">
+          <div class="severity-pill" style="background:#e3f2fd;border-color:#90caf9;color:#1565c0;"><div class="dot" style="background:#1565c0;"></div>&#128309; &lt;30&deg;C — Low</div>
+          <div class="severity-pill" style="background:#fffde7;border-color:#ffe082;color:#f57f17;"><div class="dot" style="background:#f9a825;"></div>&#128993; 30-35&deg;C — Moderate</div>
+          <div class="severity-pill" style="background:#fff3e0;border-color:#ffcc80;color:#e65100;"><div class="dot" style="background:#f57c00;"></div>&#128992; 35-40&deg;C — High</div>
+          <div class="severity-pill" style="background:#fdecea;border-color:#ef9a9a;color:#c62828;"><div class="dot" style="background:#c62828;"></div>&#128308; &gt;40&deg;C — Extreme</div>
+        </div>
+      </div>
+      <div class="forecast-stats">
+        <div class="f-stat"><span class="f-stat-val">4</span><span class="f-stat-label">Regions Covered</span></div>
+        <div class="f-stat"><span class="f-stat-val">20</span><span class="f-stat-label">States Covered</span></div>
+        <div class="f-stat"><span class="f-stat-val">35.6&deg;C</span><span class="f-stat-label">Average Temp</span></div>
+        <div class="f-stat"><span class="f-stat-val">27&deg;C</span><span class="f-stat-label">Lowest Temp</span></div>
+        <div class="f-stat"><span class="f-stat-val">Rajasthan</span><span class="f-stat-label">Hottest State</span></div>
+        <div class="f-stat"><span class="f-stat-val">Himachal</span><span class="f-stat-label">Coolest State</span></div>
+      </div>
+    </div>
+  </main>
 
+  <!-- PAGE: HOTSPOT MAP -->
+  <main id="page-hotspot" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Live Map</div><h2>Interactive Heatwave Hotspot Map</h2><p>Click on markers to view city-level temperature and severity data</p></div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;">
+        <div style="flex:1;min-width:130px;background:#fdecea;border:1.5px solid #ef9a9a;border-radius:12px;padding:18px 22px;text-align:center;">
+          <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#c62828;" id="extremeCount">-</div>
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#b71c1c;">Extreme</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#fff3e0;border:1.5px solid #ffcc80;border-radius:12px;padding:18px 22px;text-align:center;">
+          <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#e65100;" id="severeCount">-</div>
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#bf360c;">Severe</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#fffde7;border:1.5px solid #ffe082;border-radius:12px;padding:18px 22px;text-align:center;">
+          <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#f57f17;" id="warningCount">-</div>
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#e65100;">Warning</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:12px;padding:18px 22px;text-align:center;">
+          <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#2e7d32;" id="normalCount">-</div>
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#1b5e20;">Normal</div>
+        </div>
+      </div>
+      <div class="map-container"><div id="heatmap"></div></div>
+    </div>
+  </main>
 
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15281600.757461092!2d72.09604504049474!3d20.756485603994015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1785236170675!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </main>
+  <!-- PAGE: SAFETY -->
+  <main id="page-safety" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Safety</div><h2>Safety Measures During a Heatwave</h2><p>Important guidelines to protect yourself and your community</p></div>
+      <div class="safety-categories">
+        <div class="safety-category"><span class="sc-icon">&#128167;</span><h3>Hydration &amp; Diet</h3>
+          <ul><li>Drink water all day long, even if not thirsty.</li><li>Drink ORS, lemon water, or fruit juices.</li><li>Avoid alcohol, tea, coffee, and very sugary drinks.</li><li>Eat light meals with watermelon and cucumber.</li></ul>
+        </div>
+        <div class="safety-category"><span class="sc-icon">&#9728;&#65039;</span><h3>Outdoor Safety</h3>
+          <ul><li>Avoid going out between <strong>12:00 PM and 4:00 PM</strong>.</li><li>Wear a hat, sunglasses, and use an umbrella.</li><li>Put on sunscreen with high SPF before going outside.</li><li>Do not do heavy work outside during hottest hours.</li></ul>
+        </div>
+        <div class="safety-category"><span class="sc-icon">&#127968;</span><h3>Indoor Safety</h3>
+          <ul><li>Stay in a cool place with air conditioning or a fan.</li><li>Keep windows and curtains closed during the day.</li><li>Take cool showers or baths to lower body temperature.</li><li>Use light-colored, loose-fitting breathable clothing.</li></ul>
+        </div>
+        <div class="safety-category"><span class="sc-icon">&#10084;&#65039;</span><h3>Health Monitoring</h3>
+          <ul><li>Check on elderly family members and neighbors.</li><li>Know the signs of heat exhaustion and heatstroke.</li><li>If dizzy, weak, or nauseous — move to cooler place and drink water.</li></ul>
+        </div>
+      </div>
+      <div class="emergency-banner">
+        <h3>&#128657; In Case of a Heat-Related Emergency</h3>
+        <p>Contact your local emergency services or healthcare provider immediately.</p>
+        <div class="emergency-links">
+          <a href="tel:011-1078" class="emergency-link">&#128222; Call 011-1078 (Disaster Management)</a>
+          <a href="mailto:npcchh.hq-ncdc@ncdc.gov.in" class="emergency-link">&#9993;&#65039; Email NPCCHH</a>
+          <a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener" class="emergency-link">&#127758; IMD Website</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 Heatwave Intelligence System | Stay Safe. Stay Informed.</p>
-    </footer>
+  <!-- PAGE: ABOUT -->
+  <main id="page-about" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">About</div><h2>About the Heatwave Intelligence System</h2><p>Our mission, team, and data partners</p></div>
+      <div class="quote-block">
+        <blockquote>"As temperatures continue to rise, it is our collective responsibility to stay informed, alert and prepared. Heatwaves can have serious effects on public health and day to day life. We advise all citizens to stay hydrated, wear light clothing, avoid prolonged outdoor activities during peak afternoon hours, and regularly follow official weather updates."</blockquote>
+        <cite>— Chief Meteorologist, Disaster Management Division</cite>
+      </div>
+      <div class="info-grid">
+        <div class="info-card"><span class="info-card-icon">&#127919;</span><h3>Our Objective</h3>
+          <p>The Heatwave Intelligence System monitors weather conditions, predicts heatwaves, and provides timely early warning alerts to the public. It helps meteorologists, disaster management authorities, and government agencies make informed decisions while enabling citizens to take necessary precautions.</p>
+        </div>
+        <div class="info-card"><span class="info-card-icon">&#128225;</span><h3>Data Sources</h3>
+          <ul>
+            <li><a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600;">India Meteorological Department (IMD)</a></li>
+            <li>Satellite observations &amp; INSAT Feeds</li>
+            <li><a href="https://www.earthnetworks.com/resources/weather-facts/automated-weather-stations/" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600;">Automatic Weather Stations (AWS)</a></li>
+            <li>Environmental monitoring systems</li>
+          </ul>
+        </div>
+        <div class="info-card" style="grid-column:1/-1;"><span class="info-card-icon">&#128101;</span><h3>Stakeholders &amp; Contact</h3>
+          <p>The system supports a <strong>wide range of stakeholders</strong>: citizens, meteorologists, disaster management authorities, government agencies, healthcare organizations, and emergency response teams.</p>
+          <p style="margin-top:14px;"><strong>Contact Us:</strong> 7738140606 | <a href="mailto:avni.sharma@somaiya.edu" style="color:var(--brand);">avni.sharma@somaiya.edu</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE: SOURCES -->
+  <main id="page-sources" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Sources</div><h2>Data Sources &amp; Stakeholders</h2><p>How we collect, analyze, and distribute heatwave information</p></div>
+      <div class="card"><div class="card-body">
+        <h3 style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;color:var(--brand);margin-bottom:18px;">&#128203; How We Make Weather Predictions &amp; Send Alerts</h3>
+        <ol class="process-list">
+          <li>We collect real-time weather data from Automatic Weather Stations (AWS).</li>
+          <li>We retrieve stored weather records from the IMD database.</li>
+          <li>We collect and study satellite images and radar updates.</li>
+          <li>We analyze temperature change, humidity, wind speed, and rainfall patterns.</li>
+          <li>After studying the data, we detect the possibility of Heat Wave (HW) or Severe Heat Wave (SHW).</li>
+          <li>Weather forecasts are generated and safety precautions are provided.</li>
+          <li>Alerts and advisory notices are released on the website.</li>
+          <li>Conditions are monitored continuously by experts and updates are given.</li>
+        </ol>
+      </div></div>
+      <div class="section-header" style="margin-top:40px;"><div class="pill-tag">Partners</div><h2>Data Sources</h2></div>
+      <div class="sources-grid">
+        <a href="https://oizom.com/product/weathercom-automatic-weather-station/" target="_blank" rel="noopener" class="source-chip">&#128225; Automatic Weather Stations (AWS)</a>
+        <a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener" class="source-chip">&#127963; IMD Database</a>
+        <a href="https://www.mosdac.gov.in/insat-3d" target="_blank" rel="noopener" class="source-chip">&#128752; INSAT Satellite Feeds</a>
+        <div class="source-chip">&#127783; Rain Gauge Network</div>
+        <div class="source-chip">&#127787; Air Quality Monitoring Stations</div>
+        <div class="source-chip">&#127777; Temperature &amp; Humidity Sensors</div>
+      </div>
+      <div class="section-header" style="margin-top:40px;"><div class="pill-tag">Stakeholders</div><h2>Roles &amp; Responsibilities</h2></div>
+      <div class="stakeholder-list">
+        <div class="stakeholder-item"><div class="sh-icon">&#127963;</div><div><h4>Meteorological Department</h4><ul><li>Collect and validate weather observations.</li><li>Generate weather forecasts.</li><li>Issue heat wave and rainfall alerts.</li></ul></div></div>
+        <div class="stakeholder-item"><div class="sh-icon">&#128680;</div><div><h4>Disaster Management Authority</h4><ul><li>Monitor emergency weather alerts.</li><li>Coordinate rescue and relief operations.</li><li>Activate emergency response teams.</li></ul></div></div>
+        <div class="stakeholder-item"><div class="sh-icon">&#127751;</div><div><h4>Local Government</h4><ul><li>Open emergency shelters.</li><li>Arrange drinking water facilities during heat waves.</li><li>Coordinate with healthcare departments.</li></ul></div></div>
+        <div class="stakeholder-item"><div class="sh-icon">&#127973;</div><div><h4>Healthcare Department</h4><ul><li>Prepare hospitals for heat-related illnesses.</li><li>Conduct public health awareness campaigns.</li><li>Deploy medical teams.</li></ul></div></div>
+      </div>
+      <div class="divider"></div>
+      <h3 style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--brand);margin-bottom:12px;">Abbreviations</h3>
+      <table class="abbr-table" style="width:auto;background:transparent;box-shadow:none;border:none;">
+        <tr><td>IMD</td><td>India Meteorological Department</td></tr>
+        <tr><td>AWS</td><td>Automatic Weather Stations</td></tr>
+        <tr><td>HW</td><td>Heat Wave</td></tr>
+        <tr><td>SHW</td><td>Severe Heat Wave</td></tr>
+        <tr><td>INSAT</td><td>Indian National Satellite System</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <!-- PAGE: MEDIA -->
+  <main id="page-media" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Media</div><h2>Media Resources, News &amp; Awareness</h2><p>Watch news coverage, access guidance documents, and explore heatwave mapping resources</p></div>
+      <div class="media-card">
+        <h3>&#128279; IMD Heatwave Guidance</h3>
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:14px;">Official guidance from the India Meteorological Department on how to understand and respond to heatwaves.</p>
+        <a href="https://mausam.imd.gov.in/responsive/heatwave_guidance.php" target="_blank" rel="noopener" class="resource-link">&#128196; Heat Wave Guidance from IMD &#8594;</a>
+      </div>
+      <div class="media-card">
+        <h3>&#128250; India Heatwave: Capital Records Hottest May Night In Years - WION Climate Tracker</h3>
+        <video src="img/India Heatwave_ Capital Records Hottest May Night In Years _ WION Climate Tracker_720p.mp4" width="700" loop controls style="margin-top:14px;">Your browser does not support the video tag.</video>
+      </div>
+      <div class="media-card">
+        <h3>&#128250; How Are Indians Coping With Europe's Heatwave? - BBC News India</h3>
+        <video src="img/How are Indians coping with Europe s heatwave  _ BBC News India_720p.mp4" width="700" controls style="margin-top:14px;">Your browser does not support the video tag.</video>
+      </div>
+      <div class="media-card">
+        <h3>&#128240; Heatwave Alert - The Indian Express</h3>
+        <div class="news-grid">
+          <img src="img/Screenshot 2026-08-17 at 11.54.50 PM.png" alt="Heatwave News Headline 1">
+          <img src="img/Screenshot 2026-08-17 at 11.55.00 PM.png" alt="Heatwave News Headline 2">
+        </div>
+      </div>
+      <div class="media-card">
+        <h3>&#128506; Heatwave Mapping &amp; GIS</h3>
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:14px;">Learn how India is building Early Warning Systems using GIS for extreme heat mapping.</p>
+        <a href="https://www.esri.in/en-in/newsroom/blog/gis-for-heatwave-mapping" target="_blank" rel="noopener" class="resource-link">&#127758; How India Is Building Early Warning Systems &#8594;</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE: SUBSCRIBE -->
+  <main id="page-subscribe" class="page">
+    <div class="section-wrap">
+      <div class="section-header"><div class="pill-tag">Register</div><h2>Climate Intelligence Registration</h2><p>Sign up to receive heatwave early-warning alerts for your region</p></div>
+      <div class="form-wrap">
+        <div class="success-banner" id="success-message">&#9989; Registration Successful! You are now registered for Climate Intelligence Heatwave Monitoring and Early-Warning Alerts.</div>
+        <div class="card"><div class="card-body">
+          <form id="registration-form" novalidate>
+            <fieldset>
+              <legend>Registration &amp; Alert Preferences</legend>
+              <div class="form-grid" style="margin-top:20px;">
+                <div class="form-group"><label for="user-name">Full Name *</label><input type="text" id="user-name" name="user-name" placeholder="Enter full name" required><span class="error-msg" id="name-error">Please enter your full name.</span></div>
+                <div class="form-group"><label for="user-id">User ID *</label><input type="text" id="user-id" name="user-id" placeholder="Format: CLM-1234" required><span class="error-msg" id="userid-error">Format must be CLM-XXXX (e.g., CLM-1234).</span></div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="mobile-no">Mobile Number *</label><input type="tel" id="mobile-no" name="mobile-no" placeholder="10-digit mobile number" required maxlength="10"><span class="error-msg" id="phone-error">Please enter a valid 10-digit mobile number.</span></div>
+                <div class="form-group"><label for="user-email">Email Address *</label><input type="email" id="user-email" name="user-email" placeholder="Enter your email address" required><span class="error-msg" id="email-error">Please enter a valid email address.</span></div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="location">City / Location *</label><input type="text" id="location" name="location" placeholder="Enter city/location" required><span class="error-msg" id="location-error">Please enter your location.</span></div>
+                <div class="form-group"><label for="pin-code">PIN / Postal Code *</label><input type="text" id="pin-code" name="pin-code" placeholder="6-digit postal code" required maxlength="6"><span class="error-msg" id="pin-error">Please enter a valid 6-digit postal code.</span></div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="age-group">Age Group *</label>
+                  <select id="age-group" name="age-group" required><option value="">-- Select Age Group --</option><option value="under-18">Under 18</option><option value="18-35">18 - 35</option><option value="36-60">36 - 60</option><option value="above-60">Above 60</option></select>
+                  <span class="error-msg" id="age-error">Please select your age group.</span>
+                </div>
+                <div class="form-group"><label for="user-category">User Category *</label>
+                  <select id="user-category" name="user-category" required><option value="">-- Select Category --</option><option value="General Public">General Public</option><option value="Senior Citizen">Senior Citizen</option><option value="Student">Student</option><option value="Outdoor Worker">Outdoor Worker</option><option value="Healthcare Worker">Healthcare Worker</option><option value="Government/Disaster Management">Government / Disaster Management</option><option value="Other">Other</option></select>
+                  <span class="error-msg" id="category-error">Please select your user category.</span>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="region">Region</label>
+                  <select id="region" name="region"><option value="north">North</option><option value="south">South</option><option value="east">East</option><option value="west">West</option></select>
+                </div>
+                <div class="form-group"><label for="reg-date">Registration Date *</label><input type="date" id="reg-date" name="reg-date" required><span class="error-msg" id="date-error">Please select a registration date.</span></div>
+              </div>
+              <div class="form-group"><label>Preferred Alert Channel *</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="alert-channel" value="SMS"> SMS</label>
+                  <label class="radio-option"><input type="radio" name="alert-channel" value="Email"> Email</label>
+                  <label class="radio-option"><input type="radio" name="alert-channel" value="WhatsApp"> WhatsApp</label>
+                  <label class="radio-option"><input type="radio" name="alert-channel" value="App Notification"> App Notification</label>
+                </div>
+                <span class="error-msg" id="channel-error">Please select a preferred alert channel.</span>
+              </div>
+              <div class="form-group">
+                <div class="checkbox-group">
+                  <label class="checkbox-option"><input type="checkbox" id="terms" name="terms" required> I agree to receive heatwave updates and alerts *</label>
+                </div>
+                <span class="error-msg" id="terms-error">You must agree to receive alerts.</span>
+              </div>
+              <div class="form-group"><label for="enquiry">Enquiry / Additional Details</label><textarea id="enquiry" name="enquiry" placeholder="Drop any specific inquiry or details here"></textarea></div>
+              <div class="form-buttons">
+                <button type="submit" class="btn-primary">&#9989; Submit Registration</button>
+                <button type="reset" class="btn-secondary" id="reset-btn">&#8635; Reset Form</button>
+              </div>
+            </fieldset>
+          </form>
+        </div></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong>Heatwave Intelligence System</strong> | Stay Safe. Stay Informed. | Data Source: <a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener">IMD India</a></p>
+    <p style="margin-top:6px;font-size:0.8rem;opacity:0.65;">K.J. Somaiya School of Engineering, Mumbai-77 &middot; Somaiya Vidyavihar University &middot; Department of Computer Engineering</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script>
+    var pages = ['home','alert','forecast','hotspot','safety','about','sources','media','subscribe'];
+    var mapInitialized = false;
+
+    function showPage(name) {
+      for (var i=0; i<pages.length; i++) {
+        var el = document.getElementById('page-' + pages[i]);
+        if (el) el.classList.remove('active');
+        var btn = document.getElementById('nav-' + pages[i]);
+        if (btn) btn.classList.remove('active');
+      }
+      var target = document.getElementById('page-' + name);
+      if (target) target.classList.add('active');
+      var btn = document.getElementById('nav-' + name);
+      if (btn) btn.classList.add('active');
+      if (name === 'hotspot' && !mapInitialized) { initHotspotMap(); mapInitialized = true; }
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      var nav = document.getElementById('navLinks');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      nav.classList.toggle('open');
+      this.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    var temperatureReadings = [34, 36, 38, 39, 41, 40, 37, 35, 39, 42];
+    var heatwaveThreshold = 40;
+    var minTemp = Math.min.apply(null, temperatureReadings);
+    var maxTemp = Math.max.apply(null, temperatureReadings);
+    var sumTemp = 0;
+    for (var i=0; i<temperatureReadings.length; i++) sumTemp += temperatureReadings[i];
+    var avgTemp = sumTemp / temperatureReadings.length;
+    var above40 = temperatureReadings.filter(function(r){ return r > heatwaveThreshold; });
+    var atAbove40 = temperatureReadings.filter(function(r){ return r >= heatwaveThreshold; });
+    document.getElementById('all-readings').textContent = temperatureReadings.join('  ') + ' °C';
+    document.getElementById('minimum').textContent = minTemp + '°C';
+    document.getElementById('maximum').textContent = maxTemp + '°C';
+    document.getElementById('average').textContent = avgTemp.toFixed(1) + '°C';
+    document.getElementById('above-threshold').textContent = above40.length;
+    document.getElementById('at-or-above').textContent = atAbove40.length;
+    document.getElementById('high-readings').textContent = atAbove40.join(', ') + '°C';
+
+    function initHotspotMap() {
+      var map = L.map('heatmap').setView([22.5, 78.9], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+      var hotspotData = [
+        {city:'Delhi',state:'Delhi',lat:28.6139,lng:77.2090,temperature:44.2,humidity:29,severity:'Extreme'},
+        {city:'Jaipur',state:'Rajasthan',lat:26.9124,lng:75.7873,temperature:43.6,humidity:31,severity:'Severe'},
+        {city:'Ahmedabad',state:'Gujarat',lat:23.0225,lng:72.5714,temperature:42.8,humidity:34,severity:'Severe'},
+        {city:'Nagpur',state:'Maharashtra',lat:21.1458,lng:79.0882,temperature:41.7,humidity:36,severity:'Warning'},
+        {city:'Mumbai',state:'Maharashtra',lat:19.0760,lng:72.8777,temperature:39.8,humidity:58,severity:'Warning'},
+        {city:'Pune',state:'Maharashtra',lat:18.5204,lng:73.8567,temperature:38.9,humidity:48,severity:'Warning'},
+        {city:'Hyderabad',state:'Telangana',lat:17.3850,lng:78.4867,temperature:37.4,humidity:45,severity:'Normal'},
+        {city:'Bengaluru',state:'Karnataka',lat:12.9716,lng:77.5946,temperature:31.8,humidity:62,severity:'Normal'},
+        {city:'Chennai',state:'Tamil Nadu',lat:13.0827,lng:80.2707,temperature:35.9,humidity:70,severity:'Normal'},
+        {city:'Lucknow',state:'Uttar Pradesh',lat:26.8467,lng:80.9462,temperature:42.5,humidity:32,severity:'Severe'},
+        {city:'Bhopal',state:'Madhya Pradesh',lat:23.2599,lng:77.4126,temperature:40.8,humidity:38,severity:'Warning'},
+        {city:'Patna',state:'Bihar',lat:25.5941,lng:85.1376,temperature:41.9,humidity:40,severity:'Severe'}
+      ];
+      var severityColors = {Extreme:'#c62828',Severe:'#f57c00',Warning:'#fbc02d',Normal:'#2e9d68'};
+      var extreme=0,severe=0,warning=0,normal=0;
+      for (var i=0;i<hotspotData.length;i++) {
+        var s = hotspotData[i].severity;
+        if(s==='Extreme') extreme++;
+        else if(s==='Severe') severe++;
+        else if(s==='Warning') warning++;
+        else normal++;
+      }
+      document.getElementById('extremeCount').textContent=extreme;
+      document.getElementById('severeCount').textContent=severe;
+      document.getElementById('warningCount').textContent=warning;
+      document.getElementById('normalCount').textContent=normal;
+      for (var i=0;i<hotspotData.length;i++) {
+        (function(data) {
+          var color = severityColors[data.severity];
+          var icon = L.divIcon({className:'custom-marker',html:'<div style="width:20px;height:20px;background:'+color+';border:3px solid white;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>',iconSize:[20,20],iconAnchor:[10,10]});
+          var popup = '<div class="popup"><h3>&#128205; '+data.city+'</h3><div class="popup-row"><span class="popup-label">State</span><span class="popup-value">'+data.state+'</span></div><div class="popup-row"><span class="popup-label">Temperature</span><span class="popup-value">'+data.temperature+'°C</span></div><div class="popup-row"><span class="popup-label">Humidity</span><span class="popup-value">'+data.humidity+'%</span></div><span class="risk-badge" style="background:'+color+'20;color:'+color+';">'+data.severity+' Risk</span></div>';
+          L.marker([data.lat, data.lng], {icon: icon}).addTo(map).bindPopup(popup);
+        })(hotspotData[i]);
+      }
+    }
+
+    document.getElementById('registration-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var valid = true;
+      function validate(id, errorId, condition) {
+        var el = document.getElementById(id);
+        var err = document.getElementById(errorId);
+        if (!condition(el)) { el.classList.add('invalid'); if(err) err.classList.add('show'); valid = false; }
+        else { el.classList.remove('invalid'); if(err) err.classList.remove('show'); }
+      }
+      validate('user-name','name-error',function(el){return el.value.trim().length>=2;});
+      validate('user-id','userid-error',function(el){return /^CLM-\d{4}$/i.test(el.value.trim());});
+      validate('mobile-no','phone-error',function(el){return /^\d{10}$/.test(el.value.trim());});
+      validate('user-email','email-error',function(el){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());});
+      validate('location','location-error',function(el){return el.value.trim().length>=2;});
+      validate('pin-code','pin-error',function(el){return /^\d{6}$/.test(el.value.trim());});
+      validate('age-group','age-error',function(el){return el.value!=='';});
+      validate('user-category','category-error',function(el){return el.value!=='';});
+      validate('reg-date','date-error',function(el){return el.value!=='';});
+      var channelSelected = document.querySelector('input[name="alert-channel"]:checked');
+      var channelErr = document.getElementById('channel-error');
+      if (!channelSelected) { channelErr.classList.add('show'); valid=false; } else { channelErr.classList.remove('show'); }
+      var terms = document.getElementById('terms');
+      var termsErr = document.getElementById('terms-error');
+      if (!terms.checked) { termsErr.classList.add('show'); valid=false; } else { termsErr.classList.remove('show'); }
+      if (valid) {
+        var banner = document.getElementById('success-message');
+        banner.classList.add('show');
+        this.reset();
+        banner.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', function() {
+      document.getElementById('success-message').classList.remove('show');
+      var invalids = document.querySelectorAll('.invalid');
+      for(var i=0;i<invalids.length;i++) invalids[i].classList.remove('invalid');
+      var errors = document.querySelectorAll('.error-msg.show');
+      for(var i=0;i<errors.length;i++) errors[i].classList.remove('show');
+    });
+  </script>
 </body>
-
 </html>
