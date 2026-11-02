@@ -68,8 +68,8 @@
 
 /* Active page highlight */
 .site-navbar .nav-list li a.active {
-    background: #e76f00;
-    color: #fff;
+    background: #F0F8FF;
+    color: #0f2d59;;
 }
 
 /* --- Legacy .gallery styles (index/home page) --- */
@@ -110,4 +110,4 @@
     background-color: #a2d2ff;
     color: #0f2d59;
     border-color: #a2d2ff;
-}
+}

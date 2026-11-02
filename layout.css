@@ -9,9 +9,10 @@ header {
 }
 
 .content {
-    float: right;
-    width: 70%;
-    padding: 10px;
+   max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 20px !important; /* Adjust padding as needed */
+  align-items: flex-start !important;
 }
 
 footer {

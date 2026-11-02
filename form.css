@@ -6,28 +6,28 @@ input {
 }
 
 input:focus {
-    border: 2px solid #e7780f;
+    border: 2px solid #0f2d59;
 }
 
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #e7780f;
+    background-color: #0f2d59;
     color: white;
 }
 
 button:hover {
-    background-color: #c45f00;
+    background-color: #0f2d59;
 }
 
 fieldset {
     padding: 20px;
-    border: 2px solid #e7780f;
+    border: 2px solid #0f2d59;
     border-radius: 10px;
 }
 
 legend {
     padding: 5px 10px;
-    color: #e7780f;
+    color: #0f2d59;
 }
