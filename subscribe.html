@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heatwave Advisory Subscription Form</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+<header>
+<h1 style="text-align: center; background-color: #e7780f;"><font
+name="Arial"></font><b>Heatwave Advisory Subscription Form</b></font></h1>
+</header>
+<form action="/submit.php" method="POST">
+<fieldset>
+<legend>Heatwave Advisory Details</legend>
+
+<section>
+
+<label for="citizen-name" style="padding: 10px; text-align: center; border-
+radius: 1px solid #858282; margin-bottom: 16px;" ><font size="5">Citizen
+
+Name:</font></label>
+<br>
+<input type="text" id="citizen-name" name="Citizen name" placeholder="Enter
+citizen name" required style="width: auto; padding: 5px; border: 2px solid
+#858282;">
+</section>
+<section>
+<label for="user-email" style="padding: 10px; text-align: center; border-radius:
+1px solid #858282; margin-bottom: 16px;" ><font size="5">Email
+
+K. J. Somaiya School of Engineering, Mumbai-77
+
+(Somaiya Vidyavihar University)
+Department of Computer Engineering
+
+Address:</font></label>
+<br>
+<input type="email" id="user-email" name="user-email" required
+placeholder="Enter your email address" style="width: auto; padding: 5px; border: 2px
+solid #858282;">
+</section>
+<section>
+<label for="mobile-no" style="padding: 10px; text-align: center; border-radius:
+1px solid #858282; margin-bottom: 16px;" ><font size="5">Mobile
+Number:</font></label>
+<br>
+<input type="tel" id="mobile-no" name="mobile-no" required placeholder="Enter
+your mobile number" style="width: auto; padding: 5px; border: 2px solid #858282;">
+</section>
+<label for="region"><font size="5">Choose a region:</font></label>
+<select id="region" name="region" style="width: auto; padding: 5px; border: 2px
+solid #858282;">
+<option value="north">North</option>
+<option value="south">South</option>
+<option value="east">East</option>
+<option value="west">West</option>
+</select>
+<br>
+<font size="5">Preferred Language:</font>
+<br>
+<label>
+<input type="radio" name="language" value="english" style="margin-right:
+10px;"><font size="4"> English</font>
+</label>
+<br>
+<label>
+<input type="radio" name="language" value="spanish" style="margin-right:
+10px;"><font size="4"> Spanish</font>
+</label>
+<br>
+<label>
+<input type="checkbox" name="terms" required style="margin-right: 10px;"><font
+size="4"> Receive updates and alerts</font>
+</label>
+<br>
+<font size="5" name="Veranda"></font><textarea>Drop your enquiry
+here</textarea></font>
+<br>
+<button type="submit" style="padding: 10px; text-align: center; border: 1px solid
+#e7780f; background-color: #e7780f; color: white;">Submit Form</button>
+<hr>
+<button type="reset" style="padding: 10px; text-align: center; border: 1px solid
+
+K. J. Somaiya School of Engineering, Mumbai-77
+
+(Somaiya Vidyavihar University)
+Department of Computer Engineering
+#e7780f; background-color: #e7780f; color: white;">Reset Form</button>
+</fieldset>
+</form>
+</body>
+</html>

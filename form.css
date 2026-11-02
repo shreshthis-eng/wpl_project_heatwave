@@ -1,0 +1,33 @@
+input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 2px solid #e7780f;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e7780f;
+    color: white;
+}
+
+button:hover {
+    background-color: #c45f00;
+}
+
+fieldset {
+    padding: 20px;
+    border: 2px solid #e7780f;
+    border-radius: 10px;
+}
+
+legend {
+    padding: 5px 10px;
+    color: #e7780f;
+}

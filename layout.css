@@ -1,0 +1,21 @@
+header {
+    width: 100%;
+}
+
+.sidebar {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.content {
+    float: right;
+    width: 70%;
+    padding: 10px;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    padding: 20px;
+}

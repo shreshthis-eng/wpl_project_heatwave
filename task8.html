@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Intelligence Registration Form</title>
+<style>
+fieldset {
+  border: 2px solid #858282;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 2px solid #858282;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: aliceblue;
+  box-shadow: 0 0 5px rgba(231, 120, 15, 0.5);
+}
+
+.invalid-input {
+  border-color: #d9534f !important;
+  box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+  font-weight: bold;
+}
+
+#success-message {
+  display: none;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+button[type="submit"] {
+  background-color: darkblue;
+  color: aliceblue;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #00008b;
+}
+
+button[type="reset"] {
+  background-color: darkblue;
+  color: aliceblue;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="reset"]:hover {
+  background-color: #00008b;
+}
+
+.radio-group, .checkbox-group {
+  margin-top: 5px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 style="text-align: center; background-color: aliceblue; color: darkblue; padding: 10px;">
+    Climate Intelligence Heatwave Early-Warning System Registration
+  </h1>
+</header>
+
+<div id="success-message">
+  Registration Successful!<br>
+  <span style="font-size: 0.95rem; font-weight: normal;">You are registered for Climate Intelligence Heatwave Monitoring and Early-Warning Alerts.</span>
+</div>
+
+<form id="registration-form" action="/submit.php" method="POST" novalidate>
+  <fieldset>
+    <legend>Registration & Alert Preferences</legend>
+
+    <!-- User Name -->
+    <section>
+      <label for="user-name"><font size="4">User Name:</font></label><br>
+      <input type="text" id="user-name" name="user-name" placeholder="Enter full name" required>
+      <span class="error-message" id="name-error"></span>
+    </section>
+    <br>
+
+    <!-- Mobile Number -->
+    <section>
+      <label for="mobile-no"><font size="4">Mobile Number:</font></label><br>
+      <input type="tel" id="mobile-no" name="mobile-no" placeholder="Enter 10-digit mobile number" required maxlength="10">
+      <span class="error-message" id="phone-error"></span>
+    </section>
+    <br>
+
+    <!-- Email -->
+    <section>
+      <label for="user-email"><font size="4">Email Address:</font></label><br>
+      <input type="email" id="user-email" name="user-email" placeholder="Enter your email address" required>
+      <span class="error-message" id="email-error"></span>
+    </section>
+    <br>
+
+    <!-- User ID -->
+    <section>
+      <label for="user-id"><font size="4">User ID:</font></label><br>
+      <input type="text" id="user-id" name="user-id" placeholder="Format: CLM-1234" required>
+      <span class="error-message" id="userid-error"></span>
+    </section>
+    <br>
+
+    <!-- Location/City -->
+    <section>
+      <label for="location"><font size="4">Location / City:</font></label><br>
+      <input type="text" id="location" name="location" placeholder="Enter city/location" required>
+      <span class="error-message" id="location-error"></span>
+    </section>
+    <br>
+
+    <!-- PIN/Postal Code -->
+    <section>
+      <label for="pin-code"><font size="4">PIN / Postal Code:</font></label><br>
+      <input type="text" id="pin-code" name="pin-code" placeholder="Enter 6-digit postal code" required maxlength="6">
+      <span class="error-message" id="pin-error"></span>
+    </section>
+    <br>
+
+    <!-- Age Group -->
+    <section>
+      <label for="age-group"><font size="4">Age Group:</font></label><br>
+      <select id="age-group" name="age-group" required>
+        <option value="">-- Select Age Group --</option>
+        <option value="under-18">Under 18</option>
+        <option value="18-35">18 - 35</option>
+        <option value="36-60">36 - 60</option>
+        <option value="above-60">Above 60</option>
+      </select>
+      <span class="error-message" id="age-error"></span>
+    </section>
+    <br>
+
+    <!-- User Category -->
+    <section>
+      <label for="user-category"><font size="4">User Category:</font></label><br>
+      <select id="user-category" name="user-category" required>
+        <option value="">-- Select User Category --</option>
+        <option value="General Public">General Public</option>
+        <option value="Senior Citizen">Senior Citizen</option>
+        <option value="Student">Student</option>
+        <option value="Outdoor Worker">Outdoor Worker</option>
+        <option value="Healthcare Worker">Healthcare Worker</option>
+        <option value="Government/Disaster Management">Government/Disaster Management</option>
+        <option value="Other">Other</option>
+      </select>
+      <span class="error-message" id="category-error"></span>
+    </section>
+    <br>
+
+    <!-- Preferred Alert Channel -->
+    <section>
+      <font size="4">Preferred Alert Channel:</font><br>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="alert-channel" value="SMS" style="width: auto;"> SMS
+        </label><br>
+        <label>
+          <input type="radio" name="alert-channel" value="Email" style="width: auto;"> Email
+        </label><br>
+        <label>
+          <input type="radio" name="alert-channel" value="WhatsApp" style="width: auto;"> WhatsApp
+        </label><br>
+        <label>
+          <input type="radio" name="alert-channel" value="App Notification" style="width: auto;"> App Notification
+        </label>
+      </div>
+      <span class="error-message" id="channel-error"></span>
+    </section>
+    <br>
+
+    <!-- Registration Date -->
+    <section>
+      <label for="reg-date"><font size="4">Registration Date:</font></label><br>
+      <input type="date" id="reg-date" name="reg-date" required>
+      <span class="error-message" id="date-error"></span>
+    </section>
+    <br>
+
+    <!-- Region Selection -->
+    <section>
+      <label for="region"><font size="4">Choose a region:</font></label><br>
+      <select id="region" name="region">
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+      </select>
+    </section>
+    <br>
+
+    <!-- Enquiry / Remarks -->
+    <section>
+      <label for="enquiry"><font size="4">Enquiry / Additional Details:</font></label><br>
+      <textarea id="enquiry" name="enquiry" rows="4" placeholder="Drop any specific inquiry or details here"></textarea>
+    </section>
+    <br>
+
+    <button type="submit">Submit Registration</button>
+    <button type="reset">Reset Form</button>
+  </fieldset>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('registration-form');
+  
+  // Input DOM Elements
+  const nameInput = document.getElementById('user-name');
+  const phoneInput = document.getElementById('mobile-no');
+  const emailInput = document.getElementById('user-email');
+  const userIdInput = document.getElementById('user-id');
+  const locationInput = document.getElementById('location');
+  const pinInput = document.getElementById('pin-code');
+  const ageSelect = document.getElementById('age-group');
+  const categorySelect = document.getElementById('user-category');
+  const regDateInput = document.getElementById('reg-date');
+
+  // Error DOM Elements
+  const nameError = document.getElementById('name-error');
+  const phoneError = document.getElementById('phone-error');
+  const emailError = document.getElementById('email-error');
+  const userIdError = document.getElementById('userid-error');
+  const locationError = document.getElementById('location-error');
+  const pinError = document.getElementById('pin-error');
+  const ageError = document.getElementById('age-error');
+  const categoryError = document.getElementById('category-error');
+  const channelError = document.getElementById('channel-error');
+  const dateError = document.getElementById('date-error');
+  const successMessage = document.getElementById('success-message');
+
+  // Regex patterns
+  const nameRegex = /^[A-Za-z ]+$/;
+  const phoneRegex = /^[0-9]{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const userIdRegex = /^CLM-[0-9]{4}$/;
+  const pinRegex = /^[0-9]{6}$/;
+
+  // Generic Field Validator Helper
+  function validateField(input, errorElement, validationFn) {
+    const errorMsg = validationFn();
+    if (errorMsg) {
+      errorElement.textContent = errorMsg;
+      if (input) input.classList.add('invalid-input');
+      return false;
+    } else {
+      errorElement.textContent = '';
+      if (input) input.classList.remove('invalid-input');
+      return true;
+    }
+  }
+
+  // Individual Validation Operations
+  function validateName() {
+    return validateField(nameInput, nameError, function () {
+      const val = nameInput.value.trim();
+      if (!val) return 'User name is required.';
+      if (!nameRegex.test(val)) return 'User name must contain only alphabets and spaces.';
+      return '';
+    });
+  }
+
+  function validatePhone() {
+    return validateField(phoneInput, phoneError, function () {
+      const val = phoneInput.value.trim();
+      if (!val) return 'Mobile number is required.';
+      if (!phoneRegex.test(val)) return 'Mobile number must contain exactly 10 digits.';
+      return '';
+    });
+  }
+
+  function validateEmail() {
+    return validateField(emailInput, emailError, function () {
+      const val = emailInput.value.trim();
+      if (!val) return 'Email address is required.';
+      if (!emailRegex.test(val)) return 'Please enter a valid email format.';
+      return '';
+    });
+  }
+
+  function validateUserId() {
+    return validateField(userIdInput, userIdError, function () {
+      const val = userIdInput.value.trim();
+      if (!val) return 'User ID is required.';
+      if (!userIdRegex.test(val)) return 'User ID must follow the pattern CLM-1234.';
+      return '';
+    });
+  }
+
+  function validateLocation() {
+    return validateField(locationInput, locationError, function () {
+      const val = locationInput.value.trim();
+      if (!val) return 'Location/City is required.';
+      return '';
+    });
+  }
+
+  function validatePin() {
+    return validateField(pinInput, pinError, function () {
+      const val = pinInput.value.trim();
+      if (!val) return 'PIN/Postal Code is required.';
+      if (!pinRegex.test(val)) return 'PIN/Postal Code must contain exactly six digits.';
+      return '';
+    });
+  }
+
+  function validateAge() {
+    return validateField(ageSelect, ageError, function () {
+      if (!ageSelect.value) return 'Age Group must be selected.';
+      return '';
+    });
+  }
+
+  function validateCategory() {
+    return validateField(categorySelect, categoryError, function () {
+      if (!categorySelect.value) return 'User Category must be selected.';
+      return '';
+    });
+  }
+
+  function validateAlertChannel() {
+    const selectedChannel = document.querySelector('input[name="alert-channel"]:checked');
+    if (!selectedChannel) {
+      channelError.textContent = 'Preferred Alert Channel must be selected.';
+      return false;
+    } else {
+      channelError.textContent = '';
+      return true;
+    }
+  }
+
+  function validateRegistrationDate() {
+    return validateField(regDateInput, dateError, function () {
+      const val = regDateInput.value;
+      if (!val) return 'Registration date must be entered.';
+      
+      const inputDate = new Date(val);
+      const today = new Date();
+      // Reset hours to perform strict date-only comparison
+      today.setHours(23, 59, 59, 999);
+
+      if (inputDate > today) {
+        return 'Registration date should not be a future date.';
+      }
+      return '';
+    });
+  }
+
+  // Prevent direct non-numeric typing into numeric fields
+  phoneInput.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    if (phoneInput.classList.contains('invalid-input')) validatePhone();
+  });
+
+  pinInput.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    if (pinInput.classList.contains('invalid-input')) validatePin();
+  });
+
+  // Blur/Change Listeners
+  nameInput.addEventListener('blur', validateName);
+  phoneInput.addEventListener('blur', validatePhone);
+  emailInput.addEventListener('blur', validateEmail);
+  userIdInput.addEventListener('blur', validateUserId);
+  locationInput.addEventListener('blur', validateLocation);
+  pinInput.addEventListener('blur', validatePin);
+  ageSelect.addEventListener('change', validateAge);
+  categorySelect.addEventListener('change', validateCategory);
+  regDateInput.addEventListener('change', validateRegistrationDate);
+  
+  document.querySelectorAll('input[name="alert-channel"]').forEach(radio => {
+    radio.addEventListener('change', validateAlertChannel);
+  });
+
+  // Form Submit Handler
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop standard submission
+
+    // Perform all validations
+    const isNameValid = validateName();
+    const isPhoneValid = validatePhone();
+    const isEmailValid = validateEmail();
+    const isUserIdValid = validateUserId();
+    const isLocationValid = validateLocation();
+    const isPinValid = validatePin();
+    const isAgeValid = validateAge();
+    const isCategoryValid = validateCategory();
+    const isChannelValid = validateAlertChannel();
+    const isDateValid = validateRegistrationDate();
+
+    // Final check across all criteria
+    if (
+      isNameValid &&
+      isPhoneValid &&
+      isEmailValid &&
+      isUserIdValid &&
+      isLocationValid &&
+      isPinValid &&
+      isAgeValid &&
+      isCategoryValid &&
+      isChannelValid &&
+      isDateValid
+    ) {
+      successMessage.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      successMessage.style.display = 'none';
+    }
+  });
+
+  // Form Reset Handler
+  form.addEventListener('reset', function () {
+    const errorSpans = document.querySelectorAll('.error-message');
+    errorSpans.forEach(span => span.textContent = '');
+
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => input.classList.remove('invalid-input'));
+
+    successMessage.style.display = 'none';
+  });
+});
+</script>
+</body>
+</html>

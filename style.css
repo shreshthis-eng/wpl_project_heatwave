@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf6fb;
+}
+
+h1, h2, h3, h4 {
+    color: #023e8a;
+}
+
+footer {
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+.heatwave-card {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    display: inline-block;
+    background-color: lavender;
+    box-shadow: 2px 2px 5px gray;
+}
