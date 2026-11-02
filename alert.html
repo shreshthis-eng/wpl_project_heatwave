@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alert Bulletin - Heatwave Intelligence System</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: snow;
+            color: #222222;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+        }
+
+        .page-container {
+            width: 100%;
+            margin: auto;
+            border: 1px solid #777777;
+            background-color: snow;
+        }
+
+        /* HEADER */
+
+        header {
+            background-color: aliceblue;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #777777;
+        }
+
+        header h1 {
+            color: darkblue;
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            color: #333333;
+            font-size: 16px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: snow;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #999999;
+        }
+
+        nav a {
+            color: darkblue;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.active {
+            background-color: aliceblue;
+            padding: 5px 8px;
+            border: 1px solid #999999;
+        }
+
+        /* MAIN CONTENT */
+
+        main {
+            margin: 20px;
+        }
+
+        .page-title {
+            color: darkblue;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        /* ACTIVE ALERT */
+
+        .alert-banner {
+            background-color: aliceblue;
+            border-left: 6px solid darkblue;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .alert-banner h2 {
+            color: darkblue;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .alert-highlight {
+            background-color: #ffff00;
+            color: #000000;
+            font-weight: bold;
+            padding: 2px 7px;
+            border: 1px solid #999999;
+        }
+
+        /* SECTION HEADINGS */
+
+        .section-title {
+            background-color: aliceblue;
+            color: darkblue;
+            padding: 8px 12px;
+            border: 1px solid #999999;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        /* INFORMATION BOX */
+
+        .information-box {
+            border: 1px solid #999999;
+            background-color: snow;
+            padding: 15px;
+        }
+
+        .information-box h3 {
+            color: darkblue;
+            margin-top: 0;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .key-point {
+            border: 1px solid #aaaaaa;
+            background-color: aliceblue;
+            padding: 12px;
+        }
+
+        .key-point strong {
+            color: darkblue;
+        }
+
+        /* REGIONAL TABLE */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #888888;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: aliceblue;
+            color: darkblue;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fbff;
+        }
+
+        /* ALERT LEVELS */
+
+        .red-alert {
+            background-color: #ffcccc;
+            font-weight: bold;
+        }
+
+        .orange-alert {
+            background-color: #ffe0b2;
+            font-weight: bold;
+        }
+
+        .yellow-alert {
+            background-color: #fff4b3;
+            font-weight: bold;
+        }
+
+        /* SAFETY ADVISORY */
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .safety-box {
+            border: 1px solid #999999;
+            background-color: aliceblue;
+            padding: 15px;
+        }
+
+        .safety-box h3 {
+            color: darkblue;
+            margin-top: 0;
+        }
+
+        /* HEATWAVE RISK ASSESSMENT */
+
+        .assessment-box {
+            border: 1px solid #999999;
+            background-color: snow;
+            padding: 15px;
+        }
+
+        .assessment-box p {
+            margin: 7px 0;
+        }
+
+        .assessment-box strong {
+            color: darkblue;
+        }
+
+        /* CLIMATE INFORMATION */
+
+        .climate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .climate-item {
+            border: 1px solid #aaaaaa;
+            background-color: aliceblue;
+            padding: 12px;
+        }
+
+        .climate-item strong {
+            color: darkblue;
+        }
+
+        /* BULLETIN INFORMATION */
+
+        .bulletin-info {
+            border: 1px solid #999999;
+            background-color: snow;
+            padding: 15px;
+        }
+
+        .bulletin-info p {
+            margin: 7px 0;
+        }
+
+        .bulletin-info strong {
+            color: darkblue;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: aliceblue;
+            border-top: 1px solid #777777;
+            text-align: center;
+            padding: 15px;
+            margin-top: 25px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        footer strong {
+            color: darkblue;
+        }
+
+        /* RESPONSIVE */
+
+        @media screen and (max-width: 800px) {
+
+            body {
+                padding: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .key-points,
+            .safety-grid,
+            .climate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 7px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Alert Bulletin and Regional Heatwave Information </h1>
+
+        <p>
+            Heatwave Intelligence System
+        </p>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="alert-details.html" class="active">
+            Alert Bulletin
+        </a>
+
+        <a href="about-system.html">
+            About
+        </a>
+
+        <a href="sources.html">
+            Sources
+        </a>
+
+        <a href="navigation.html">
+            Navigation
+        </a>
+
+        <a href="hotspot-map.html">
+            Hotspot Map
+        </a>
+
+        <a href="forecast.html">
+            Forecast
+        </a>
+
+        <a href="subscribe.html">
+            Subscribe
+        </a>
+
+        <a href="media.html">
+            Media
+        </a>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <h2 class="page-title">
+            Alert Bulletin
+        </h2>
+
+
+        <!-- ACTIVE ALERT -->
+
+        <div class="alert-banner">
+
+            <mark class="alert-highlight">
+                ACTIVE ALERT
+            </mark>
+
+            <h2>
+                Severe Heatwave Alert
+            </h2>
+
+            <p>
+                <strong>Issued by:</strong>
+                India Meteorological Department (IMD)
+            </p>
+
+            <p>
+                A severe heatwave condition has been reported across
+                selected northern, central and western regions.
+            </p>
+
+            <p>
+                <strong>Current Risk Level:</strong>
+                <span id="riskLevelOutput"></span>
+            </p>
+
+            <p>
+                <strong>Recommendation:</strong>
+                <span id="recommendationOutput"></span>
+            </p>
+
+            <p>
+                <mark class="alert-highlight">
+                    stay alert and follow safety precautions
+                </mark>
+                during periods of extreme heat.
+            </p>
+
+        </div>
+
+
+        <!-- NATIONAL HEATWAVE ALERT -->
+
+        <h2 class="section-title">
+            National Heatwave Alert
+        </h2>
+
+        <div class="information-box">
+
+            <h3>
+                Important Information
+            </h3>
+
+            <p>
+                High temperatures are expected across northern,
+                central and western regions. Hot and dry winds may
+                occur mainly during the afternoon.
+            </p>
+
+
+            <div class="key-points">
+
+                <div class="key-point">
+
+                    <strong>
+                        Temperature:
+                    </strong>
+
+                    <br>
+
+                    <span id="temperatureOutput"></span>
+
+                </div>
+
+
+                <div class="key-point">
+
+                    <strong>
+                        Humidity:
+                    </strong>
+
+                    <br>
+
+                    <span id="humidityOutput"></span>
+
+                </div>
+
+
+                <div class="key-point">
+
+                    <strong>
+                        Forecast Temperature:
+                    </strong>
+
+                    <br>
+
+                    <span id="forecastOutput"></span>
+
+                </div>
+
+
+                <div class="key-point">
+
+                    <strong>
+                        Wind Speed:
+                    </strong>
+
+                    <br>
+
+                    <span id="windOutput"></span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                <strong>
+                    Early Warning:
+                </strong>
+
+                <span id="earlyWarningOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Vulnerable Population:
+                </strong>
+
+                <span id="vulnerableAlertOutput"></span>
+
+            </p>
+
+        </div>
+
+
+        <!-- REGIONAL ALERT STATUS -->
+
+        <h2 class="section-title">
+            Regional Alert Status
+        </h2>
+
+        <table>
+
+            <tr>
+
+                <th>
+                    Region
+                </th>
+
+                <th>
+                    Alert Level
+                </th>
+
+                <th>
+                    Expected Temperature
+                </th>
+
+                <th>
+                    Conditions
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Rajasthan
+                </td>
+
+                <td class="red-alert">
+                    Red
+                </td>
+
+                <td>
+                    46–47°C
+                </td>
+
+                <td>
+                    Severe heat conditions
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Maharashtra
+                </td>
+
+                <td class="orange-alert">
+                    Orange
+                </td>
+
+                <td>
+                    43–46°C
+                </td>
+
+                <td>
+                    Very hot and dry conditions
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Delhi
+                </td>
+
+                <td class="red-alert">
+                    Red
+                </td>
+
+                <td>
+                    45–46°C
+                </td>
+
+                <td>
+                    Severe heat conditions
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Uttar Pradesh
+                </td>
+
+                <td class="yellow-alert">
+                    Yellow
+                </td>
+
+                <td>
+                    42–44°C
+                </td>
+
+                <td>
+                    Hot conditions with caution advised
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Madhya Pradesh
+                </td>
+
+                <td class="orange-alert">
+                    Orange
+                </td>
+
+                <td>
+                    44–46°C
+                </td>
+
+                <td>
+                    Very hot conditions
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- SAFETY ADVISORY -->
+
+        <h2 class="section-title">
+            Safety Advisory
+        </h2>
+
+        <div class="safety-grid">
+
+
+            <div class="safety-box">
+
+                <h3>
+                    Stay Hydrated
+                </h3>
+
+                <p>
+                    Drink sufficient water throughout the day.
+                    Carry drinking water when travelling outdoors.
+                </p>
+
+            </div>
+
+
+            <div class="safety-box">
+
+                <h3>
+                    Avoid Peak Heat
+                </h3>
+
+                <p>
+                    Avoid unnecessary outdoor activities during
+                    the hottest afternoon hours.
+                </p>
+
+            </div>
+
+
+            <div class="safety-box">
+
+                <h3>
+                    Protect Yourself
+                </h3>
+
+                <p>
+                    Use umbrellas, hats and suitable clothing
+                    when exposure to direct sunlight is unavoidable.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- HEATWAVE RISK ASSESSMENT -->
+
+        <h2 class="section-title">
+            Heatwave Risk Assessment
+        </h2>
+
+        <div class="assessment-box">
+
+            <p>
+
+                <strong>
+                    Location:
+                </strong>
+
+                <span id="locationOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Heatwave Condition:
+                </strong>
+
+                <span id="conditionOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Risk Level:
+                </strong>
+
+                <span id="assessmentRiskOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Recommendation:
+                </strong>
+
+                <span id="assessmentRecommendationOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Early Warning:
+                </strong>
+
+                <span id="assessmentEarlyWarningOutput"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Vulnerable Population Alert:
+                </strong>
+
+                <span id="assessmentVulnerableOutput"></span>
+
+            </p>
+
+        </div>
+
+
+        <!-- CLIMATE MONITORING INFORMATION -->
+
+        <h2 class="section-title">
+            Climate Monitoring Information
+        </h2>
+
+        <div class="climate-grid">
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Location:
+                </strong>
+
+                <br>
+
+                <span id="objectLocation"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    City:
+                </strong>
+
+                <br>
+
+                <span id="objectCity"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Temperature:
+                </strong>
+
+                <br>
+
+                <span id="objectTemperature"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Humidity:
+                </strong>
+
+                <br>
+
+                <span id="objectHumidity"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Wind Speed:
+                </strong>
+
+                <br>
+
+                <span id="objectWind"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Forecast Temperature:
+                </strong>
+
+                <br>
+
+                <span id="objectForecast"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Risk Level:
+                </strong>
+
+                <br>
+
+                <span id="objectRisk"></span>
+
+            </div>
+
+
+            <div class="climate-item">
+
+                <strong>
+                    Alert Status:
+                </strong>
+
+                <br>
+
+                <span id="objectAlert"></span>
+
+            </div>
+
+        </div>
+
+
+        <div class="assessment-box">
+
+            <p>
+
+                <strong>
+                    Temperature Difference from 37°C:
+                </strong>
+
+                <span id="temperatureDifference"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Calculated Risk:
+                </strong>
+
+                <span id="objectRiskCalculation"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Early Warning:
+                </strong>
+
+                <span id="objectEarlyWarning"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Updated Alert Status:
+                </strong>
+
+                <span id="updatedAlertStatus"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Monitoring Date:
+                </strong>
+
+                <span id="objectDate"></span>
+
+            </p>
+
+        </div>
+
+
+        <!-- BULLETIN INFORMATION -->
+
+        <h2 class="section-title">
+            Bulletin Information
+        </h2>
+
+        <div class="bulletin-info">
+
+            <p>
+                <strong>Bulletin Version:</strong>
+                v2.1
+            </p>
+
+            <p>
+                <strong>Issued:</strong>
+                26th July 2026
+            </p>
+
+            <p>
+                <strong>Source:</strong>
+                India Meteorological Department (IMD)
+            </p>
+
+            <p>
+                <strong>Disclaimer:</strong>
+                This bulletin is intended for awareness and
+                educational purposes. Always check the latest
+                official observations and advisories before
+                taking action.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Heatwave Intelligence System
+        </p>
+
+
+        <p>
+            <strong>Contact Us:</strong>
+            Deevija Singh Suryavansh |
+            deevija.s@somaiya.edu
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+    /* =====================================================
+       HEATWAVE RISK LOGIC
+       ===================================================== */
+
+    let locationName = "Pune";
+
+    let temperature = 39;
+
+    let humidity = 65;
+
+    let forecastTemperature = 41;
+
+    let heatwaveCondition = true;
+
+    let vulnerablePopulationAlert = true;
+
+    let riskLevel;
+
+    let recommendation;
+
+
+    if (temperature >= 40) {
+
+        riskLevel = "SEVERE";
+
+        recommendation = "Severe Heatwave Warning";
+
+    }
+
+    else if (temperature >= 38 && humidity >= 60) {
+
+        riskLevel = "HIGH";
+
+        recommendation = "Issue Heatwave Warning";
+
+    }
+
+    else if (temperature >= 35 && temperature < 38) {
+
+        riskLevel = "MODERATE";
+
+        recommendation = "Monitor Conditions";
+
+    }
+
+    else if (forecastTemperature >= 40) {
+
+        riskLevel = "EARLY WARNING";
+
+        recommendation = "Prepare for Heatwave";
+
+    }
+
+    else {
+
+        riskLevel = "NORMAL";
+
+        recommendation = "Continue Monitoring";
+
+    }
+
+
+    let earlyWarning;
+
+
+    if (forecastTemperature >= 40) {
+
+        earlyWarning =
+            "Early Warning - Prepare for Heatwave";
+
+    }
+
+    else {
+
+        earlyWarning =
+            "No Early Warning Required";
+
+    }
+
+
+    let vulnerableAlert;
+
+
+    if (vulnerablePopulationAlert === true) {
+
+        vulnerableAlert =
+            "Alert recommended for vulnerable population.";
+
+    }
+
+    else {
+
+        vulnerableAlert =
+            "No special vulnerable population alert.";
+
+    }
+
+
+    /* DISPLAY RISK INFORMATION */
+
+    document.getElementById("locationOutput").innerHTML =
+        locationName;
+
+    document.getElementById("temperatureOutput").innerHTML =
+        temperature + "°C";
+
+    document.getElementById("humidityOutput").innerHTML =
+        humidity + "%";
+
+    document.getElementById("forecastOutput").innerHTML =
+        forecastTemperature + "°C";
+
+    document.getElementById("conditionOutput").innerHTML =
+        heatwaveCondition ? "Active" : "Inactive";
+
+    document.getElementById("riskLevelOutput").innerHTML =
+        riskLevel;
+
+    document.getElementById("assessmentRiskOutput").innerHTML =
+        riskLevel;
+
+    document.getElementById("recommendationOutput").innerHTML =
+        recommendation;
+
+    document.getElementById("assessmentRecommendationOutput").innerHTML =
+        recommendation;
+
+    document.getElementById("earlyWarningOutput").innerHTML =
+        earlyWarning;
+
+    document.getElementById("assessmentEarlyWarningOutput").innerHTML =
+        earlyWarning;
+
+    document.getElementById("vulnerableAlertOutput").innerHTML =
+        vulnerableAlert;
+
+    document.getElementById("assessmentVulnerableOutput").innerHTML =
+        vulnerableAlert;
+
+
+    /* =====================================================
+       CLIMATE MONITORING OBJECT
+       ===================================================== */
+
+    let climateData = {
+
+        location: "Mumbai",
+
+        city: "Mumbai",
+
+        temperature: 39,
+
+        humidity: 65,
+
+        windSpeed: 12,
+
+        forecastTemperature: 41,
+
+        riskLevel: "High",
+
+        alertStatus: "Active",
+
+        monitoringDate: "21 September 2026",
+
+
+        displayData: function() {
+
+            return `
+                <strong>Location:</strong> ${this.location}<br>
+                <strong>City:</strong> ${this.city}<br>
+                <strong>Temperature:</strong> ${this.temperature}°C<br>
+                <strong>Humidity:</strong> ${this.humidity}%<br>
+                <strong>Wind Speed:</strong> ${this.windSpeed} km/h<br>
+                <strong>Forecast Temperature:</strong> ${this.forecastTemperature}°C<br>
+                <strong>Risk Level:</strong> ${this.riskLevel}<br>
+                <strong>Alert Status:</strong> ${this.alertStatus}<br>
+                <strong>Monitoring Date:</strong> ${this.monitoringDate}
+            `;
+
+        },
+
+
+        calculateTemperatureDifference: function(threshold) {
+
+            return this.temperature - threshold;
+
+        },
+
+
+        determineRisk: function() {
+
+            if (this.temperature >= 40) {
+
+                return "Severe";
+
+            }
+
+            else if (
+                this.temperature >= 38 &&
+                this.humidity >= 60
+            ) {
+
+                return "High";
+
+            }
+
+            else if (
+                this.temperature >= 35 &&
+                this.temperature < 38
+            ) {
+
+                return "Moderate";
+
+            }
+
+            else {
+
+                return "Normal";
+
+            }
+
+        },
+
+
+        earlyWarning: function() {
+
+            if (this.forecastTemperature >= 40) {
+
+                return "Early Warning - Prepare for Heatwave";
+
+            }
+
+            else {
+
+                return "No Early Warning Required";
+
+            }
+
+        },
+
+
+        updateAlertStatus: function(newStatus) {
+
+            this.alertStatus = newStatus;
+
+            return this.alertStatus;
+
+        }
+
+    };
+
+
+    /* CLIMATE CALCULATIONS */
+
+    let threshold = 37;
+
+    let difference =
+        climateData.calculateTemperatureDifference(threshold);
+
+    let calculatedRisk =
+        climateData.determineRisk();
+
+    let warning =
+        climateData.earlyWarning();
+
+    let updatedStatus =
+        climateData.updateAlertStatus("Active");
+
+
+    /* DISPLAY CLIMATE INFORMATION */
+
+    document.getElementById("objectLocation").innerHTML =
+        climateData.location;
+
+    document.getElementById("objectCity").innerHTML =
+        climateData.city;
+
+    document.getElementById("objectTemperature").innerHTML =
+        climateData.temperature + "°C";
+
+    document.getElementById("objectHumidity").innerHTML =
+        climateData.humidity + "%";
+
+    document.getElementById("objectWind").innerHTML =
+        climateData.windSpeed + " km/h";
+
+    document.getElementById("objectForecast").innerHTML =
+        climateData.forecastTemperature + "°C";
+
+    document.getElementById("objectRisk").innerHTML =
+        climateData.riskLevel;
+
+    document.getElementById("objectAlert").innerHTML =
+        climateData.alertStatus;
+
+    document.getElementById("objectDate").innerHTML =
+        climateData.monitoringDate;
+
+    document.getElementById("temperatureDifference").innerHTML =
+        difference + "°C";
+
+    document.getElementById("objectRiskCalculation").innerHTML =
+        calculatedRisk;
+
+    document.getElementById("objectEarlyWarning").innerHTML =
+        warning;
+
+    document.getElementById("updatedAlertStatus").innerHTML =
+        updatedStatus;
+
+</script>
+
+</body>
+
+</html>

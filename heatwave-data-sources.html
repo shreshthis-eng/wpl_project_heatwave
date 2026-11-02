@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Sources and Stakeholders</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:14px 10px;background:#fffafa;color:#222;font-family:"Times New Roman",Times,serif;font-size:13px}
+header{height:93px;background:#eef7ff;border:1px solid #999;text-align:center;padding:19px 10px;color:#10166f}
+header h1{font-size:22px;margin:0 0 10px;font-weight:bold}
+header p{margin:0;font-size:13px}
+nav{height:46px;margin:14px 15px 20px;border:1px solid #bdbdbd;display:flex;align-items:center;justify-content:center;gap:7px}
+nav a{color:#10166f;text-decoration:none;font-weight:bold;padding:7px 9px}
+nav a.active,nav a:hover{background:#eaf2ff;text-decoration:underline}
+main{padding:0 15px}
+.status{height:169px;border:1px solid #aaa;border-left:3px solid #10166f;background:#eef7ff;padding:14px;margin-bottom:21px}
+.tag{display:inline-block;background:#ffff00;color:#111;font-size:11px;padding:3px 5px;font-weight:bold}
+.status h2{font-size:18px;color:#10166f;margin:11px 0 12px}
+.status p{margin:8px 0}
+section{margin-bottom:21px;scroll-margin-top:10px}
+.heading{height:42px;background:#eef7ff;border:1px solid #b7b7b7;color:#10166f;font-size:17px;padding:10px;margin:0 0 12px}
+.process-grid{border:1px solid #bdbdbd;padding:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.process-card{height:80px;border:1px solid #c5c5c5;background:#fffdfd;display:flex;align-items:center;gap:9px;padding:9px}
+.number{height:28px;width:28px;flex:0 0 28px;border:1px solid #aeb9c4;border-radius:50%;background:#f1f7fc;color:#10166f;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px}
+.process-card h3{font-size:13px;color:#10166f;margin:0 0 5px}
+.process-card p{font-size:12px;line-height:1.35;margin:0}
+.table-wrap{width:100%;overflow-x:auto}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+th,td{border:1px solid #bdbdbd;text-align:left;padding:10px 8px;height:38px}
+th{background:#eef7ff;color:#10166f;font-weight:bold}
+td{background:#fffdfd}
+th:nth-child(1){width:33%}th:nth-child(2){width:43%}th:nth-child(3){width:24%}
+td a{color:#10166f;font-weight:bold;text-decoration:underline}
+.stakeholder-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stakeholder-card{height:159px;border:1px solid #bdbdbd;background:#fffdfd;padding:13px 14px}
+.stakeholder-card h3{font-size:15px;color:#10166f;margin:0 0 14px}
+.stakeholder-card ul{padding-left:14px;margin:0}
+.stakeholder-card li{margin:0 0 7px}
+.abbreviation-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.abbr{height:78px;border:1px solid #bdbdbd;background:#fffdfd;text-align:center;padding:13px 5px}
+.abbr h3{color:#10166f;font-size:18px;margin:0 0 8px}
+.abbr p{margin:0}
+footer{height:100px;background:#eef7ff;border:1px solid #999;text-align:center;color:#10166f;padding:17px 10px;margin-top:28px}
+footer h3{font-size:13px;margin:0 0 7px}
+footer p{margin:5px 0}
+@media(max-width:900px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.abbr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){body{margin:8px 5px}nav{height:auto;min-height:46px;margin:10px 5px 15px;flex-wrap:wrap;gap:2px;padding:5px}nav a{font-size:12px;padding:6px}main{padding:0 5px}.process-grid,.stakeholder-grid,.abbreviation-grid{grid-template-columns:1fr}.process-card{min-height:80px;height:auto}.stakeholder-card{height:auto;min-height:145px}.heading{height:auto;min-height:42px}table{min-width:650px}}
+</style>
+</head>
+<body>
+<header id="home">
+  <h1>Data Sources and Stakeholders</h1>
+  <p>Heatwave Intelligence and Regional Monitoring System</p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a class="active" href="#home">Home</a>
+  <a href="#monitoring-process">Monitoring Process</a>
+  <a href="#data-sources">Data Sources</a>
+  <a href="#stakeholders">Stakeholders</a>
+  <a href="#abbreviations">Abbreviations</a>
+</nav>
+
+<main>
+  <div class="status">
+    <span class="tag">ACTIVE MONITORING</span>
+    <h2>Heatwave Monitoring System</h2>
+    <p><b>System Status:</b> Weather conditions are being continuously monitored.</p>
+    <p>Data is collected from weather stations, satellite feeds and other meteorological sources.</p>
+    <p><b>Last Checked:</b> 21/9/2026, 5:32:38 pm</p>
+  </div>
+
+  <section id="monitoring-process">
+    <h2 class="heading">How We Make Weather Predictions and Send Alerts</h2>
+    <div class="process-grid">
+      <article class="process-card"><span class="number">1</span><div><h3>Collect Real-Time Weather Data</h3><p>Data is collected from Automatic Weather Stations (AWS).</p></div></article>
+      <article class="process-card"><span class="number">2</span><div><h3>Retrieve Historical Records</h3><p>Previous weather records are obtained from the IMD database.</p></div></article>
+      <article class="process-card"><span class="number">3</span><div><h3>Satellite and Radar Analysis</h3><p>Satellite images and radar updates are studied to understand regional weather conditions.</p></div></article>
+      <article class="process-card"><span class="number">4</span><div><h3>Analyze Weather Conditions</h3><p>Temperature, humidity, wind speed and rainfall patterns are analyzed.</p></div></article>
+      <article class="process-card"><span class="number">5</span><div><h3>Detect Heatwave Conditions</h3><p>The collected information is used to identify possible Heat Wave (HW) or Severe Heat Wave (SHW).</p></div></article>
+      <article class="process-card"><span class="number">6</span><div><h3>Generate Forecast</h3><p>Weather forecasts and suitable safety precautions are prepared.</p></div></article>
+      <article class="process-card"><span class="number">7</span><div><h3>Release Alerts</h3><p>Heatwave alerts and advisory notices are displayed for the public.</p></div></article>
+      <article class="process-card"><span class="number">8</span><div><h3>Continuous Monitoring</h3><p>Experts continue monitoring weather conditions and provide updated information.</p></div></article>
+    </div>
+  </section>
+
+  <section id="data-sources">
+    <h2 class="heading">Data Sources</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data Source</th><th>Information Provided</th><th>Source / Link</th></tr></thead>
+        <tbody>
+          <tr><td>Automatic Weather Stations (AWS)</td><td>Temperature, humidity, wind speed and rainfall</td><td>Weather monitoring stations</td></tr>
+          <tr><td>India Meteorological Department (IMD)</td><td>Weather observations, forecasts and historical records</td><td><a href="https://mausam.imd.gov.in/" target="_blank">IMD Website</a></td></tr>
+          <tr><td>INSAT Satellite Feeds</td><td>Satellite images and atmospheric information</td><td><a href="https://www.mosdac.gov.in/" target="_blank">INSAT / MOSDAC</a></td></tr>
+          <tr><td>Rain Gauge Network</td><td>Rainfall measurements from different regions</td><td>Meteorological observations</td></tr>
+          <tr><td>Air Quality Monitoring Stations</td><td>Air quality and atmospheric conditions</td><td>Environmental monitoring</td></tr>
+          <tr><td>Temperature and Humidity Sensors</td><td>Local temperature and humidity measurements</td><td>Environmental sensors</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="stakeholders">
+    <h2 class="heading">Stakeholders: Their Roles and Actions</h2>
+    <div class="stakeholder-grid">
+      <article class="stakeholder-card">
+        <h3>🌦️ &nbsp;Meteorological Department</h3>
+        <ul><li>Collect and validate weather observations.</li><li>Generate weather forecasts.</li><li>Issue heatwave and rainfall alerts.</li><li>Share reports with government agencies.</li></ul>
+      </article>
+      <article class="stakeholder-card">
+        <h3>🚨 &nbsp;Disaster Management Authority</h3>
+        <ul><li>Monitor emergency weather alerts.</li><li>Coordinate rescue and relief operations.</li><li>Activate emergency response teams.</li></ul>
+      </article>
+      <article class="stakeholder-card">
+        <h3>🏙️ &nbsp;Local Government</h3>
+        <ul><li>Open emergency shelters.</li><li>Arrange drinking water facilities.</li><li>Coordinate with healthcare departments.</li></ul>
+      </article>
+      <article class="stakeholder-card">
+        <h3>🏥 &nbsp;Healthcare Department</h3>
+        <ul><li>Prepare hospitals for heat-related illnesses.</li><li>Conduct public health awareness campaigns.</li><li>Deploy medical teams when required.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="abbreviations">
+    <h2 class="heading">Abbreviations and Their Meanings</h2>
+    <div class="abbreviation-grid">
+      <article class="abbr"><h3>IMD</h3><p>India Meteorological Department</p></article>
+      <article class="abbr"><h3>AWS</h3><p>Automatic Weather Stations</p></article>
+      <article class="abbr"><h3>HW</h3><p>Heat Wave</p></article>
+      <article class="abbr"><h3>SHW</h3><p>Severe Heat Wave</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <h3>Heatwave Intelligence System</h3>
+  <p>Designed for Web Development Laboratory</p>
+  <p>© 2026 Heatwave Monitoring System</p>
+</footer>
+
+<script>
+  // Highlight the navigation link for the section currently in view.
+  const navLinks = document.querySelectorAll("nav a");
+  const pageSections = document.querySelectorAll("header[id], main section");
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + entry.target.id
+          );
+        });
+      }
+    });
+  }, { rootMargin: "-25% 0px -65% 0px" });
+
+  pageSections.forEach((section) => sectionObserver.observe(section));
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((item) => item.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
